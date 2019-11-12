@@ -1,0 +1,5 @@
+coverage
+dist
+lib
+package.json
+package-lock.json

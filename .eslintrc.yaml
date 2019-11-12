@@ -1,0 +1,19 @@
+env:
+  es6: true
+  node: true
+extends: '@ridedott/eslint-config'
+overrides:
+  - env:
+      jest: true
+    files:
+      - src/**/*.spec.ts
+    rules:
+      '@typescript-eslint/no-magic-numbers': off
+      '@typescript-eslint/camelcase': off
+      max-lines-per-function: off
+      no-magic-numbers: 0
+      capitalized-comments: 1
+parserOptions:
+  ecmaVersion: 2020
+  project: tsconfig.json
+  sourceType: module

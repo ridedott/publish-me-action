@@ -1,0 +1,23 @@
+name: 'Semantic Release action'
+author: 'ridedott'
+description: 'GitHub Action for Semantic Release.'
+branding:
+  color: 'gray-dark'
+  icon: 'package'
+inputs:
+  SCRIPTS:
+    description: 'Custom scripts to run with exec plugin.'
+  PLUGINS:
+    description: 'Additional plugins to install.'
+  DRY_RUN:
+    description: 'Dry-run skips `prepare`, `publish` and `success` steps.'
+  DEBUG:
+    description: 'Output debugging information.'
+  BRANCH:
+    description: 'Git branch to release from.'
+  GITHUB_TOKEN:
+    description: 'A GitHub token.'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

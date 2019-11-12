@@ -1,0 +1,41 @@
+{
+  "dictionaries": [
+    "companies",
+    "filetypes",
+    "misc",
+    "node",
+    "npm",
+    "softwareTerms",
+    "typescript"
+  ],
+  "flagWords": [],
+  "ignorePaths": [
+    ".eslintrc",
+    "*.config.js",
+    "*.json",
+    "*.log",
+    "*.yaml",
+    "**/*.json",
+    "generated/**",
+    "dist/**",
+    "lib/**",
+    "node_modules/**"
+  ],
+  "language": "en-US",
+  "version": "0.1",
+  "words": [
+    "codeowners",
+    "commitlint",
+    "dependabot",
+    "docblock",
+    "editorconfig",
+    "mergeable",
+    "octokit",
+    "prettierignore",
+    "prettierrc",
+    "releaserc",
+    "ridedott",
+    "ridedottauto",
+    "webhook"
+  ]
+}

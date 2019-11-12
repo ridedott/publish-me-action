@@ -1,0 +1,56 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup Node.js with GitHub Package Registry
+        uses: actions/setup-node@master
+        with:
+          node-version: 12
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          registry-url: 'https://npm.pkg.github.com'
+          scope: 'ridedott'
+          always-auth: true
+
+      - name: Setup Node.js with npm Package Registry
+        uses: actions/setup-node@master
+        with:
+          node-version: 12
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          registry-url: 'https://registry.npmjs.org'
+          scope: 'ridedott'
+          always-auth: true
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: |
+          # Workaround https://github.com/zeit/ncc/issues/457.
+          mv tsconfig.production.json tsconfig.json
+          npm run build
+
+      # - name: Release
+      #   env:
+      #     CI: true
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |
+      #     echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > /home/runner/work/_temp/.npmrc
+      #     echo "//registry.npmjs.org/:_authToken=$GITHUB_TOKEN" >> /home/runner/work/_temp/.npmrc
+      #     sed -i.bak -e '/dist/d' .gitignore
+      #     npx semantic-release
+
+      - name: auto-merge
+        uses: ridedott/semantic-release-action@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

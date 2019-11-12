@@ -1,0 +1,95 @@
+{
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "description": "GitHub Action for Semantic Release.",
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@ridedott/eslint-config": "^0.4.66",
+    "@semantic-release/changelog": "^3.0.5",
+    "@semantic-release/exec": "^3.3.8",
+    "@semantic-release/git": "^7.0.18",
+    "@semantic-release/npm": "^5.3.4",
+    "@semantic-release/release-notes-generator": "^7.3.2",
+    "@types/jest": "^24.0.22",
+    "@types/node": "^12.12.7",
+    "@zeit/ncc": "^0.20.5",
+    "commitizen": "^4.0.3",
+    "cspell": "^4.0.33",
+    "eslint": "^6.6.0",
+    "http-status-codes": "^1.4.0",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.4.2",
+    "nock": "^11.7.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
+    "semantic-release": "^16.0.0-beta.31",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.5.0"
+  },
+  "engines": {
+    "node": "12"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run husky:pre-commit"
+    }
+  },
+  "license": "UNLICENSED",
+  "lint-staged": {
+    "*.ts": [
+      "eslint",
+      "git add"
+    ],
+    "*.{json,md,ts,yml,yaml}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "main": "dist/index.js",
+  "name": "@ridedott/dependabot-auto-merge-action",
+  "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "repository": "https://github.com/ridedott/dependabot-auto-merge-action",
+  "scripts": {
+    "build": "run-s clean:dist build:dist",
+    "build:dist": "ncc build src/index.ts --minify --source-map --v8-cache",
+    "build:ts": "tsc --project tsconfig.production.json",
+    "build:ts:watch": "tsc --project tsconfig.production.json --watch",
+    "clean": "run-p clean:*",
+    "clean:dist": "rm -rf dist",
+    "clean:lib": "rm -rf lib",
+    "cz": "git-cz",
+    "cz:retry": "git-cz --retry",
+    "format": "prettier --check \"**/*.{js,json,md,ts,yml,yaml}\"",
+    "format:fix": "prettier --write \"**/*.{js,json,md,ts,yml,yaml}\"",
+    "husky:lint-staged": "lint-staged",
+    "husky:pre-commit": "run-p spellcheck husky:lint-staged",
+    "lint": "eslint --resolve-plugins-relative-to \"./node_modules/@ridedott/eslint-config\" \"**/*.ts\"",
+    "lint:fix": "eslint --fix --resolve-plugins-relative-to \"./node_modules/@ridedott/eslint-config\" \"**/*.ts\"",
+    "semantic-release": "semantic-release",
+    "spellcheck": "cspell \"**/*\"",
+    "test": "NODE_OPTIONS='--max-old-space-size=4096' jest",
+    "test:ci": "jest --ci --collect-coverage --maxWorkers=12",
+    "test:coverage": "NODE_OPTIONS='--max-old-space-size=4096' jest --collect-coverage",
+    "test:watch": "NODE_OPTIONS='--max-old-space-size=4096' jest --watch --verbose false",
+    "types": "tsc --noEmit"
+  },
+  "version": "0.0.0-development",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/github": "^1.1.0"
+  }
+}
