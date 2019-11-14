@@ -1,5 +1,0 @@
-branch: master
-ci: false
-debug: true
-dryRun: true
-extends: './release.config.js'

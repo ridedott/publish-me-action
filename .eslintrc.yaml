@@ -9,10 +9,7 @@ overrides:
       - src/**/*.spec.ts
     rules:
       '@typescript-eslint/no-magic-numbers': off
-      '@typescript-eslint/camelcase': off
       max-lines-per-function: off
-      no-magic-numbers: 0
-      capitalized-comments: 1
 parserOptions:
   ecmaVersion: 2020
   project: tsconfig.json

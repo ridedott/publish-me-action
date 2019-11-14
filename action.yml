@@ -5,19 +5,14 @@ branding:
   color: 'gray-dark'
   icon: 'package'
 inputs:
-  SCRIPTS:
-    description: 'Custom scripts to run with exec plugin.'
-  PLUGINS:
-    description: 'Additional plugins to install.'
   DRY_RUN:
-    description: 'Dry-run skips `prepare`, `publish` and `success` steps.'
-  DEBUG:
-    description: 'Output debugging information.'
+    description:
+      'Boolean value expected. Dry-run skips `prepare`, `publish` and `success`
+      steps. If not provided, defaults to false.'
   BRANCH:
-    description: 'Git branch to release from.'
-  GITHUB_TOKEN:
-    description: 'A GitHub token.'
-    required: true
+    description:
+      'String value expected. Git branch to release from. If not provided,
+      master branch will be used for release.'
 runs:
   using: 'node12'
   main: 'dist/index.js'

@@ -1,21 +1,27 @@
-import { getInput, setFailed, warning } from '@actions/core';
-import { context, GitHub } from '@actions/github';
+// cspell:ignore gitignore npmrc
 
-import { pushHandle } from './eventHandlers';
+import { setFailed } from '@actions/core';
+import * as semanticRelease from 'semantic-release';
 
-const GITHUB_TOKEN = getInput('GITHUB_TOKEN');
-const octokit = new GitHub(GITHUB_TOKEN);
+import { parserOptions, plugins, releaseRules, transform } from './config';
+import { handleBranchFlag, handleDryRunFlag } from './optionsHandlers';
+import { Commands, reportResults, runTask } from './tasks';
 
 const main = async (): Promise<void> => {
-  switch (context.eventName) {
-    case 'push':
-      // eslint-disable-next-line no-console
-      console.log({ context });
+  const result = await semanticRelease({
+    /* eslint-disable unicorn/prevent-abbreviations */
+    ci: false,
+    ...handleBranchFlag(),
+    ...handleDryRunFlag(),
+    parserOpts: parserOptions,
+    plugins,
+    releaseRules,
+    writerOpts: { transform },
+    /* eslint-enable unicorn/prevent-abbreviations */
+  });
 
-      return pushHandle(octokit);
-    default:
-      warning(`Unknown event ${context.eventName}, skipping.`);
-  }
+  await runTask(Commands.RemoveNpmrc);
+  await reportResults(result);
 };
 
 main().catch((error: Error): void => {

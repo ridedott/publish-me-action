@@ -1,69 +1,13 @@
-const plugins = {
-  plugins: [
-    [
-      '@semantic-release/commit-analyzer',
-      {
-        releaseRules: [
-          {
-            type: 'build',
-            release: 'patch',
-          },
-          {
-            type: 'ci',
-            release: 'patch',
-          },
-          {
-            type: 'chore',
-            release: 'patch',
-          },
-          {
-            type: 'docs',
-            release: 'patch',
-          },
-          {
-            type: 'refactor',
-            release: 'patch',
-          },
-          {
-            type: 'style',
-            release: 'patch',
-          },
-          {
-            type: 'test',
-            release: 'patch',
-          },
-        ],
-      },
-    ],
-    '@semantic-release/release-notes-generator',
-    '@semantic-release/changelog',
-    '@semantic-release/npm',
-    [
-      '@semantic-release/git',
-      {
-        assets: ['dist', 'package.json', 'package-lock.json', 'CHANGELOG.md'],
-        message: 'chore(release): ${nextRelease.version} [skip ci]',
-      },
-    ],
-    [
-      '@semantic-release/github',
-      {
-        failComment: false,
-        releasedLabels: false,
-        successComment: false,
-      },
-    ],
-  ],
-};
+// cspell:ignore eslintignore
 
-parserOpts = {
-  mergePattern: /^Merge pull request #(\d+) from (.*)$/,
-  mergeCorrespondence: ['id', 'source'],
-};
-
-releaseRules = [{ type: 'refactor', release: 'patch' }];
-
-customTransform = (commit, context) => {
+/**
+ * This transform function is a modified copy of
+ * Angular preset for https://github.com/semantic-release/commit-analyzer
+ * to support release notes and changelog entries generation for all types of commit messages:
+ * https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular
+ * Ignored in .eslintignore to speedup development of action. Same reasoning for usage of @ts-ignore annotations
+ */
+export const transform = (commit, context) => {
   const issues = [];
 
   commit.notes.forEach(note => {
@@ -111,10 +55,14 @@ customTransform = (commit, context) => {
     if (url) {
       url = `${url}/issues/`;
       // Issue URLs.
-      commit.subject = commit.subject.replace(/#([0-9]+)/g, (_, issue) => {
-        issues.push(issue);
-        return `[#${issue}](${url}${issue})`;
-      });
+      commit.subject = commit.subject.replace(
+        /#([0-9]+)/g,
+        (_, issue: string) => {
+          // @ts-ignore
+          issues.push(issue);
+          return `[#${issue}](${url}${issue})`;
+        },
+      );
     }
     if (context.host) {
       // User URLs.
@@ -133,6 +81,7 @@ customTransform = (commit, context) => {
 
   // remove references that already appear in the subject
   commit.references = commit.references.filter(reference => {
+    // @ts-ignore
     if (issues.indexOf(reference.issue) === -1) {
       return true;
     }
@@ -141,11 +90,4 @@ customTransform = (commit, context) => {
   });
 
   return commit;
-};
-
-module.exports = {
-  releaseRules,
-  parserOpts,
-  writerOpts: { transform: customTransform },
-  ...plugins,
 };

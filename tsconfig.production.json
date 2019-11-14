@@ -9,6 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "lib": ["es2017"],
     "module": "commonjs",
+    "moduleResolution": "node",
     "noImplicitAny": false,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
