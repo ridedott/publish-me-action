@@ -14,7 +14,7 @@ export const plugins = [
   '@semantic-release/changelog',
   [
     '@semantic-release/exec',
-    { generateNotesCmd: `npx prettier --write ${env.CHANGELOG_PATH}` },
+    { shell: `npx prettier --write ${env.CHANGELOG_PATH}` },
   ],
   '@semantic-release/npm',
   [
