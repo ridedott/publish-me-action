@@ -1,9 +1,9 @@
 ## [1.0.1](https://github.com/ridedott/semantic-release-action/compare/v1.0.0...v1.0.1) (2019-11-14)
 
-
 ### Continuous Integration
 
-* format changelog after its generated ([fd2cdac](https://github.com/ridedott/semantic-release-action/commit/fd2cdac8cc962df8bda54d1dba5cbe52776f04a5))
+- format changelog after its generated
+  ([fd2cdac](https://github.com/ridedott/semantic-release-action/commit/fd2cdac8cc962df8bda54d1dba5cbe52776f04a5))
 
 # 1.0.0 (2019-11-14)
 
