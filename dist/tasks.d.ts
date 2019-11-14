@@ -5,4 +5,3 @@ export declare enum Commands {
 }
 export declare const reportResults: (result: Result) => Promise<void>;
 export declare const runTask: (task: Commands) => Promise<void>;
-//# sourceMappingURL=tasks.d.ts.map
