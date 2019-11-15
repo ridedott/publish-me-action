@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/ridedott/semantic-release-action/compare/v1.0.3...v1.0.4) (2019-11-15)
+
+
+### Chores
+
+* **deps:** bump @semantic-release/release-notes-generator ([1bc8b95](https://github.com/ridedott/semantic-release-action/commit/1bc8b9501ec5f133f7dc4ea7d8738de782159571))
+
 ## [1.0.3](https://github.com/ridedott/semantic-release-action/compare/v1.0.2...v1.0.3) (2019-11-15)
 
 
