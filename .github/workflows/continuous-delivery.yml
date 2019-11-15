@@ -38,7 +38,7 @@ jobs:
           mv tsconfig.production.json tsconfig.json
           npm run build
       - name: Release
-        uses: ridedott/semantic-release-action@master
+        uses: ridedott/semantic-release-action@debug-semantic-release
         env:
           # This must be used as GitHub Actions token does not support pushing
           # to protected branches.

@@ -7,4 +7,6 @@ ROOT_PATH="$(dirname ${SCRIPTS_PATH})"
 
 cd "${ROOT_PATH}"
 
+echo "DEBUG:::${ROOT_PATH}"
+
 npx prettier --write CHANGELOG.md

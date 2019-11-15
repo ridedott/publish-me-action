@@ -1,17 +1,20 @@
 ## [1.0.2](https://github.com/ridedott/semantic-release-action/compare/v1.0.1...v1.0.2) (2019-11-14)
 
-
 ### Chores
 
-* update dist folder ([f359c8b](https://github.com/ridedott/semantic-release-action/commit/f359c8b99d2c741307499f0ec589ec7bebf826eb))
-
+- update dist folder
+  ([f359c8b](https://github.com/ridedott/semantic-release-action/commit/f359c8b99d2c741307499f0ec589ec7bebf826eb))
 
 ### Continuous Integration
 
-* fix exec step in semantic-release ([4c33345](https://github.com/ridedott/semantic-release-action/commit/4c33345eafd59cd4aa6eaf92deaf1898afa2e311))
-* fix path to changelog in exec plugin ([5c71bfd](https://github.com/ridedott/semantic-release-action/commit/5c71bfd2344349795523a94d19221440812e990a))
-* use bash script to run format fix ([56a2cd7](https://github.com/ridedott/semantic-release-action/commit/56a2cd7fd37c73df22c449652d6b727977d1bfee))
-* use shell with semantic-release/exec ([0ea9a9b](https://github.com/ridedott/semantic-release-action/commit/0ea9a9b4e2281da2d1c9dc3821edd00609e392e6))
+- fix exec step in semantic-release
+  ([4c33345](https://github.com/ridedott/semantic-release-action/commit/4c33345eafd59cd4aa6eaf92deaf1898afa2e311))
+- fix path to changelog in exec plugin
+  ([5c71bfd](https://github.com/ridedott/semantic-release-action/commit/5c71bfd2344349795523a94d19221440812e990a))
+- use bash script to run format fix
+  ([56a2cd7](https://github.com/ridedott/semantic-release-action/commit/56a2cd7fd37c73df22c449652d6b727977d1bfee))
+- use shell with semantic-release/exec
+  ([0ea9a9b](https://github.com/ridedott/semantic-release-action/commit/0ea9a9b4e2281da2d1c9dc3821edd00609e392e6))
 
 ## [1.0.1](https://github.com/ridedott/semantic-release-action/compare/v1.0.0...v1.0.1) (2019-11-14)
 

@@ -11,6 +11,7 @@ export enum Commands {
 }
 
 const runCommand = async (command: string): Promise<void> => {
+  logInfo(`Running command: ${command}`);
   const { stdout, stderr } = await execAsync(command);
   logInfo(stdout);
 

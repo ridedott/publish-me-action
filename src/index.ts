@@ -7,6 +7,9 @@ import { parserOptions, plugins, releaseRules, transform } from './config';
 import { handleBranchFlag, handleDryRunFlag } from './optionsHandlers';
 import { Commands, reportResults, runTask } from './tasks';
 
+/* eslint-disable-next-line @typescript-eslint/no-require-imports */
+require('debug').enable('semantic-release:*');
+
 const main = async (): Promise<void> => {
   const result = await semanticRelease({
     /* eslint-disable unicorn/prevent-abbreviations */
