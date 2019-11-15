@@ -1,16 +1,16 @@
 ## [1.0.5](https://github.com/ridedott/semantic-release-action/compare/v1.0.4...v1.0.5) (2019-11-15)
 
-
 ### Continuous Integration
 
-* add missing skip-ci flag, add node auth token ([4168762](https://github.com/ridedott/semantic-release-action/commit/4168762ed45b5b27aa5fea264ece84d3dc19e23d))
+- add missing skip-ci flag, add node auth token
+  ([4168762](https://github.com/ridedott/semantic-release-action/commit/4168762ed45b5b27aa5fea264ece84d3dc19e23d))
 
 ## [1.0.4](https://github.com/ridedott/semantic-release-action/compare/v1.0.3...v1.0.4) (2019-11-15)
 
-
 ### Chores
 
-* **deps:** bump @semantic-release/release-notes-generator ([1bc8b95](https://github.com/ridedott/semantic-release-action/commit/1bc8b9501ec5f133f7dc4ea7d8738de782159571))
+- **deps:** bump @semantic-release/release-notes-generator
+  ([1bc8b95](https://github.com/ridedott/semantic-release-action/commit/1bc8b9501ec5f133f7dc4ea7d8738de782159571))
 
 ## [1.0.3](https://github.com/ridedott/semantic-release-action/compare/v1.0.2...v1.0.3) (2019-11-15)
 
