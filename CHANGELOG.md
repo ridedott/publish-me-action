@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/ridedott/semantic-release-action/compare/v1.0.7...v1.0.8) (2019-11-15)
+
+### Continuous Integration
+
+- replace test-run with auto-merge
+  ([3beaffa](https://github.com/ridedott/semantic-release-action/commit/3beaffa8ada4bc50ee2c21034ea7b28555ce0af1))
+
 ## [1.0.7](https://github.com/ridedott/semantic-release-action/compare/v1.0.6...v1.0.7) (2019-11-15)
 
 ### Chores
