@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/ridedott/semantic-release-action/compare/v1.0.6...v1.0.7) (2019-11-15)
+
+### Chores
+
+- **cleanup:** add debug flag, cleanup debug leftovers
+  ([40d7d59](https://github.com/ridedott/semantic-release-action/commit/40d7d591615ef06c8547ccfbd349fb8a8bc3a597))
+
 ## [1.0.6](https://github.com/ridedott/semantic-release-action/compare/v1.0.5...v1.0.6) (2019-11-15)
 
 ### Continuous Integration
