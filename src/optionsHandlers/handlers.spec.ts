@@ -1,6 +1,11 @@
 import * as core from '@actions/core';
 
-import { Flags, handleBranchFlag, handleDryRunFlag } from './handlers';
+import {
+  Flags,
+  handleBranchFlag,
+  handleDebugFlag,
+  handleDryRunFlag,
+} from './handlers';
 
 /*
  * Setup and teardown
@@ -46,6 +51,22 @@ describe('handlers', (): void => {
 
       expect(handleDryRunFlag()).toMatchObject(input.expected);
       expect(getInputSpy).toHaveBeenCalledWith(Flags.dryRun);
+    },
+  );
+
+  it.each([
+    { debug: 'true', expected: true },
+    { debug: 'false', expected: false },
+    { debug: '', expected: false },
+  ])(
+    'it should return proper debug flag object',
+    (input: { debug: string; expected: boolean }): void => {
+      expect.assertions(2);
+
+      getInputSpy.mockImplementationOnce((): string => input.debug);
+
+      expect(handleDebugFlag()).toBe(input.expected);
+      expect(getInputSpy).toHaveBeenCalledWith(Flags.debug);
     },
   );
 });

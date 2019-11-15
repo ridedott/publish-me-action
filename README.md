@@ -27,6 +27,8 @@ Add a workflow file to your repository to create custom automated processes.
   provided master branch will be used for release.
 - DRY_RUN: [Optional] String value expected. Dry-run skips `prepare`, `publish`
   and `success` steps. If not provided defaults to false.
+- DEBUG: [Optional] Boolean value expected. Outputs debug information for
+  semantic-release plugins. If not provided, defaults to false.
 
 ## Getting Started
 

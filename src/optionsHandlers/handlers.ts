@@ -5,6 +5,7 @@ export enum Flags {
   dryRun = 'DRY_RUN',
   plugins = 'PLUGINS',
   scripts = 'SCRIPTS',
+  debug = 'DEBUG',
 }
 
 export const handleBranchFlag = (): { branch: string } | {} => {
@@ -24,3 +25,5 @@ export const handleDryRunFlag = (): { dryRun: boolean } => {
 
   return { dryRun: dryRunInput === true };
 };
+
+export const handleDebugFlag = (): boolean => getInput(Flags.debug) === 'true';

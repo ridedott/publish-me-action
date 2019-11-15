@@ -13,6 +13,10 @@ inputs:
     description:
       'String value expected. Git branch to release from. If not provided,
       master branch will be used for release.'
+  DEBUG:
+    description:
+      'Boolean value expected. Outputs debug information for semantic-release
+      plugins. If not provided, defaults to false.'
 runs:
   using: 'node12'
   main: 'dist/index.js'

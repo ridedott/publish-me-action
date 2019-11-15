@@ -4,11 +4,19 @@ import { setFailed } from '@actions/core';
 import * as semanticRelease from 'semantic-release';
 
 import { parserOptions, plugins, releaseRules, transform } from './config';
-import { handleBranchFlag, handleDryRunFlag } from './optionsHandlers';
+import {
+  handleBranchFlag,
+  handleDebugFlag,
+  handleDryRunFlag,
+} from './optionsHandlers';
 import { Commands, reportResults, runTask } from './tasks';
 
-/* eslint-disable-next-line @typescript-eslint/no-require-imports */
-require('debug').enable('semantic-release:*');
+if (handleDebugFlag() === true) {
+  /* eslint-disable @typescript-eslint/no-require-imports */
+  /* eslint-disable-next-line global-require */
+  require('debug').enable('semantic-release:*');
+  /* eslint-enable @typescript-eslint/no-require-imports */
+}
 
 const main = async (): Promise<void> => {
   const result = await semanticRelease({
