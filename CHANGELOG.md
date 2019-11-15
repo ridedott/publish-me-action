@@ -1,3 +1,17 @@
+## [1.0.9](https://github.com/ridedott/semantic-release-action/compare/v1.0.8...v1.0.9) (2019-11-15)
+
+### Chores
+
+- **deps-dev:** bump @ridedott/eslint-config from 0.4.66 to 0.4.67
+  ([d86cc68](https://github.com/ridedott/semantic-release-action/commit/d86cc68acf0e7a45f0193d2c0ddde84393944f2e))
+- **deps-dev:** bump ts-node from 8.5.0 to 8.5.2
+  ([6c2430c](https://github.com/ridedott/semantic-release-action/commit/6c2430c5a02d7d9908de48659072923efe5e41c9))
+
+### Continuous Integration
+
+- use external ncc flag for plugins
+  ([e3abe97](https://github.com/ridedott/semantic-release-action/commit/e3abe97caf346d290d36fd0c7bc2fd11c0af1aad))
+
 ## [1.0.8](https://github.com/ridedott/semantic-release-action/compare/v1.0.7...v1.0.8) (2019-11-15)
 
 ### Continuous Integration
