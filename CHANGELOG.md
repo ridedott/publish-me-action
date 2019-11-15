@@ -7,10 +7,10 @@
 
 ## [1.0.3](https://github.com/ridedott/semantic-release-action/compare/v1.0.2...v1.0.3) (2019-11-15)
 
-
 ### Chores
 
-* debug semantic release ([8474861](https://github.com/ridedott/semantic-release-action/commit/84748611f104ca5b30cf302992d62e859cbf5cde))
+- debug semantic release
+  ([8474861](https://github.com/ridedott/semantic-release-action/commit/84748611f104ca5b30cf302992d62e859cbf5cde))
 
 ## [1.0.2](https://github.com/ridedott/semantic-release-action/compare/v1.0.1...v1.0.2) (2019-11-14)
 

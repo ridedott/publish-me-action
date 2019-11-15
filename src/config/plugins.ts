@@ -18,7 +18,7 @@ export const plugins = [
     {
       assets: ['dist', 'package.json', 'package-lock.json', 'CHANGELOG.md'],
       // eslint-disable-next-line no-template-curly-in-string
-      message: 'chore(release): ${nextRelease.version}',
+      message: 'chore(release): ${nextRelease.version} [skip ci]',
     },
   ],
   [
