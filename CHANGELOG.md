@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/ridedott/semantic-release-action/compare/v1.0.5...v1.0.6) (2019-11-15)
+
+### Continuous Integration
+
+- use master branch version of the action
+  ([2ec4bd7](https://github.com/ridedott/semantic-release-action/commit/2ec4bd7e1b634a0bf6bfc92d57457f8bcf5ca3b8))
+
 ## [1.0.5](https://github.com/ridedott/semantic-release-action/compare/v1.0.4...v1.0.5) (2019-11-15)
 
 ### Continuous Integration
