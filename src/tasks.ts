@@ -6,8 +6,8 @@ import { promisify } from 'util';
 const execAsync = promisify(exec);
 
 export enum Commands {
-  CreateGitIgnoreBackup = 'createGitIgnoreBackup',
   RemoveNpmrc = 'removeNpmrc',
+  PreInstallPlugins = 'preInstallPlugins',
 }
 
 const runCommand = async (command: string): Promise<void> => {
@@ -40,10 +40,27 @@ export const reportResults = async (result: Result): Promise<void> => {
 
 export const runTask = async (task: Commands): Promise<void> => {
   switch (task) {
-    case Commands.CreateGitIgnoreBackup:
-      return runCommand("sed -i.bak -e '/dist/d' .gitignore");
     case Commands.RemoveNpmrc:
-      return runCommand('rm -rf .npmrc');
+      /**
+       * Remove .npmrc file from the repository during release where this action
+       * is used.
+       */
+
+      return runCommand('rm -f .npmrc');
+    case Commands.PreInstallPlugins:
+      /**
+       * Install semantic-release and semantic-release plugins inside of
+       * the repository during release where this action is used.
+       */
+
+      return runCommand(`npm install \
+        semantic-release \
+        @semantic-release/changelog \
+        @semantic-release/commit-analyzer \
+        @semantic-release/exec \
+        @semantic-release/git \
+        @semantic-release/npm \
+        @semantic-release/release-notes-generator`);
     default:
       throw new Error(`task ${task} not found`);
   }

@@ -19,6 +19,8 @@ if (handleDebugFlag() === true) {
 }
 
 const main = async (): Promise<void> => {
+  await runTask(Commands.PreInstallPlugins);
+
   const result = await semanticRelease({
     /* eslint-disable unicorn/prevent-abbreviations */
     ci: false,
