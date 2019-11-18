@@ -1,3 +1,23 @@
+## [1.0.10](https://github.com/ridedott/semantic-release-action/compare/v1.0.9...v1.0.10) (2019-11-18)
+
+### Chores
+
+- update dist for action master version
+  ([092f07f](https://github.com/ridedott/semantic-release-action/commit/092f07f80a929d7367c457b7674093c545b135c1))
+- **deps:** bump semantic-release from 15.13.30 to 15.13.31
+  ([58ca6fd](https://github.com/ridedott/semantic-release-action/commit/58ca6fd870735497528f285d294071a4b7d40867))
+- **deps-dev:** bump @types/node from 12.12.7 to 12.12.8
+  ([07cd9a6](https://github.com/ridedott/semantic-release-action/commit/07cd9a678e646a75411e20a7ffc61dd7191c6d23))
+- **deps-dev:** bump cspell from 4.0.33 to 4.0.34
+  ([994ee87](https://github.com/ridedott/semantic-release-action/commit/994ee874b4153066e9c20c5343c0e706c8fa4f53))
+- **deps-dev:** bump husky from 3.0.9 to 3.1.0
+  ([3521e02](https://github.com/ridedott/semantic-release-action/commit/3521e028e75012ec997652bc13f5ff8c146971f4))
+
+### Continuous Integration
+
+- **task:** add install plugins tasks
+  ([f12e8cc](https://github.com/ridedott/semantic-release-action/commit/f12e8ccdad8a055bb94debbf44ac222288b541ce))
+
 ## [1.0.9](https://github.com/ridedott/semantic-release-action/compare/v1.0.8...v1.0.9) (2019-11-15)
 
 ### Chores
