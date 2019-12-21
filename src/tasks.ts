@@ -17,6 +17,7 @@ const runCommand = async (command: string): Promise<void> => {
 
   if (stderr.length > 0) {
     logError(stderr);
+
     throw new Error(stderr);
   }
 };

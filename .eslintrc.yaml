@@ -14,3 +14,5 @@ parserOptions:
   ecmaVersion: 2020
   project: tsconfig.json
   sourceType: module
+rules:
+  '@typescript-eslint/restrict-template-expressions': off
