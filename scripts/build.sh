@@ -2,8 +2,8 @@
 
 set -ex
 
-SCRIPTS_PATH="$(cd "$(dirname "${0}")" >/dev/null 2>&1 && pwd)"
-ROOT_PATH="$(dirname ${SCRIPTS_PATH})"
+SCRIPT_PATH="$(cd "$(dirname "${0}")" >/dev/null 2>&1 && pwd)"
+ROOT_PATH="$(dirname ${SCRIPT_PATH})"
 
 cd "${ROOT_PATH}"
 

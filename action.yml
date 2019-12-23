@@ -6,17 +6,26 @@ branding:
   icon: 'package'
 inputs:
   DRY_RUN:
+    required: false
     description:
       'Boolean value expected. Dry-run skips `prepare`, `publish` and `success`
       steps. If not provided, defaults to false.'
   BRANCH:
+    required: false
     description:
       'String value expected. Git branch to release from. If not provided,
       master branch will be used for release.'
   DEBUG:
+    required: false
     description:
       'Boolean value expected. Outputs debug information for semantic-release
       plugins. If not provided, defaults to false.'
+  SCRIPT_PATH:
+    required: false
+    description:
+      'String value expected. Executes script with @semantic-release/exec
+      plugin. Script needs to be placed in "scripts" directory in a root of a
+      repository with read and execute access.'
 runs:
   using: 'node12'
   main: 'dist/index.js'

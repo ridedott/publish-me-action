@@ -1,6 +1,6 @@
 import { parserOptions } from './parserOptions';
-import { plugins } from './plugins';
+import { generatePlugins } from './plugins';
 import { releaseRules } from './releaseRules';
 import { transform } from './transform';
 
-export { parserOptions, plugins, releaseRules, transform };
+export { generatePlugins, parserOptions, releaseRules, transform };

@@ -16,9 +16,8 @@ const runCommand = async (command: string): Promise<void> => {
   logInfo(stdout);
 
   if (stderr.length > 0) {
+    // Only log error here as NPM warnings are treated as errors in exec.
     logError(stderr);
-
-    throw new Error(stderr);
   }
 };
 
@@ -55,6 +54,7 @@ export const runTask = async (task: Commands): Promise<void> => {
        */
 
       return runCommand(`npm install \
+        --no-save \
         semantic-release \
         @semantic-release/changelog \
         @semantic-release/commit-analyzer \

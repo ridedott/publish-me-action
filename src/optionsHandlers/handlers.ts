@@ -1,4 +1,8 @@
 import { getInput } from '@actions/core';
+import { exists } from 'fs';
+import { promisify } from 'util';
+
+export const existsAsync = promisify(exists);
 
 export enum Flags {
   branch = 'BRANCH',
@@ -6,6 +10,7 @@ export enum Flags {
   plugins = 'PLUGINS',
   scripts = 'SCRIPTS',
   debug = 'DEBUG',
+  scriptPath = 'SCRIPT_PATH',
 }
 
 export const handleBranchFlag = (): { branch: string } | {} => {
@@ -27,3 +32,14 @@ export const handleDryRunFlag = (): { dryRun: boolean } => {
 };
 
 export const handleDebugFlag = (): boolean => getInput(Flags.debug) === 'true';
+
+export const handleScriptPathFlag = async (): Promise<string> => {
+  const scriptPathInput: string = getInput(Flags.scriptPath);
+  const fileExists = await existsAsync(scriptPathInput);
+
+  return fileExists === true
+    ? scriptPathInput
+    : Promise.reject(
+        new Error('The file specified in SCRIPT_PATH does not exist.'),
+      );
+};
