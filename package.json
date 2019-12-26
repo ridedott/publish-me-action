@@ -20,7 +20,7 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@ridedott/eslint-config": "^0.4.76",
-    "@types/jest": "^24.0.24",
+    "@types/jest": "^24.0.25",
     "@types/node": "^13.1.0",
     "@types/semantic-release": "^15.13.1",
     "@zeit/ncc": "^0.20.5",
