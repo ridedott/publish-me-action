@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 1
+          persist-credentials: false
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -31,8 +31,7 @@ jobs:
           restore-keys: |
             npm-
       - name: Install dependencies
-        run:
-          npm ci --ignore-scripts --no-audit --prefer-offline --progress=false
+        run: npm ci --ignore-scripts --no-audit --no-progress --prefer-offline
       - name: Format
         run: npm run format
   lint:
@@ -40,9 +39,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 1
+          persist-credentials: false
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -57,8 +56,7 @@ jobs:
           restore-keys: |
             npm-
       - name: Install dependencies
-        run:
-          npm ci --ignore-scripts --no-audit --prefer-offline --progress=false
+        run: npm ci --ignore-scripts --no-audit --no-progress --prefer-offline
       - name: Lint
         run: npm run lint
   spellcheck:
@@ -66,9 +64,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 1
+          persist-credentials: false
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -83,8 +81,7 @@ jobs:
           restore-keys: |
             npm-
       - name: Install dependencies
-        run:
-          npm ci --ignore-scripts --no-audit --prefer-offline --progress=false
+        run: npm ci --ignore-scripts --no-audit --no-progress --prefer-offline
       - name: Spellcheck
         run: npm run spellcheck
   test:
@@ -92,9 +89,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 1
+          persist-credentials: false
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -109,8 +106,7 @@ jobs:
           restore-keys: |
             npm-
       - name: Install dependencies
-        run:
-          npm ci --ignore-scripts --no-audit --prefer-offline --progress=false
+        run: npm ci --ignore-scripts --no-audit --no-progress --prefer-offline
       - name: Test
         run: npm run test:ci
       - name: Upload coverage to Coveralls
@@ -122,9 +118,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 1
+          persist-credentials: false
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -139,8 +135,7 @@ jobs:
           restore-keys: |
             npm-
       - name: Install dependencies
-        run:
-          npm ci --ignore-scripts --no-audit --prefer-offline --progress=false
+        run: npm ci --ignore-scripts --no-audit --no-progress --prefer-offline
       - name: Types
         run: npm run types
   auto-merge:
