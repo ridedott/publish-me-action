@@ -80,6 +80,17 @@ describe('handlers', (): void => {
     expect(fileExistsAsyncSpy).toHaveBeenCalledTimes(1);
   });
 
+  it('returns undefined if a path is empty', async (): Promise<void> => {
+    expect.assertions(2);
+
+    getInputSpy.mockImplementationOnce((): string => '');
+
+    const script = await handlers.handleScriptPathFlag();
+
+    expect(script).toBeUndefined();
+    expect(getInputSpy).toHaveBeenCalledWith(handlers.Flags.scriptPath);
+  });
+
   it('throws an error if path is wrong', async (): Promise<void> => {
     expect.assertions(3);
 

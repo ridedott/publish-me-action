@@ -1,31 +1,28 @@
-name: 'Semantic Release action'
-author: 'ridedott'
-description: 'GitHub Action for Semantic Release.'
+author: ridedott
 branding:
-  color: 'gray-dark'
-  icon: 'package'
+  color: gray-dark
+  icon: package
+description: A GitHub Action for Semantic Release.
 inputs:
-  DRY_RUN:
-    required: false
-    description:
-      'Boolean value expected. Dry-run skips `prepare`, `publish` and `success`
-      steps. If not provided, defaults to false.'
   BRANCH:
+    default: master
+    description: A git branch to release to.
     required: false
-    description:
-      'String value expected. Git branch to release from. If not provided,
-      master branch will be used for release.'
   DEBUG:
+    default: 'false'
+    description: Outputs debug information for semantic-release plugins.
     required: false
-    description:
-      'Boolean value expected. Outputs debug information for semantic-release
-      plugins. If not provided, defaults to false.'
+  DRY_RUN:
+    default: 'false'
+    description: 'Skips `prepare`, `publish` and `success` steps.'
+    required: false
   SCRIPT_PATH:
-    required: false
+    default: ''
     description:
-      'String value expected. Executes script with @semantic-release/exec
-      plugin. Script needs to be placed in "scripts" directory in a root of a
-      repository with read and execute access.'
+      Executes a script with @semantic-release/exec plugin. Scripts must have
+      read and execute permissions.
+    required: false
+name: Semantic Release Action
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  main: dist/index.js
+  using: node12

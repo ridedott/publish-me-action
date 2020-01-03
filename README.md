@@ -52,39 +52,44 @@ set for a repository in the
 [`settings -> secrets`](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners#creating-and-using-secrets-encrypted-variables)
 page.
 
-#### GITHUB_TOKEN
+- GITHUB_TOKEN [required string]
 
-A `GITHUB_TOKEN` variable must be set to a GitHub token with the `repo` scopes
-enabled.
+  Must be set to a GitHub token with the `repo` scopes enabled.
 
-If no branch protection is enabled, a default GitHub Actions token
-(`secrets.GITHUB_TOKEN`) can be used. However, if the branch protection is
-enabled, a
-[Personal Access Token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
-must be used instead with permissions to push to a chosen release branch.
+  If no branch protection is enabled, a default GitHub Actions token
+  (`secrets.GITHUB_TOKEN`) can be used. However, if the branch protection is
+  enabled, a
+  [Personal Access Token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
+  must be used instead with permissions to push to a chosen release branch.
 
-As an example, this repository uses a Personal Access Token of a user
-`DottBott`, which is a GitHub account registered with a purpose of performing
-automated actions.
+  As an example, this repository uses a Personal Access Token of a user
+  `DottBott`, which is a GitHub account registered with a purpose of performing
+  automated actions.
 
-#### NPM_TOKEN
-
-An `NPM_TOKEN` variable must be set to an authentication token of a chosen npm
-registry. See the [examples](#examples) section on how to use this action with
-npm and GitHub Packages.
+- NPM_TOKEN: [required string] Must be set to an authentication token of a
+  chosen npm registry. See the [examples](#examples) section on how to use this
+  action with npm and GitHub Packages.
 
 ### Inputs
 
 Inputs are used to configure the behavior of the action.
 
-- BRANCH: [Optional] A string value, git branch to release from. If it is not
-  provided, then the master branch is used for a release.
-- DRY_RUN: [Optional] A boolean value. Dry-run skips `prepare`, `publish` and
-  `success` steps. Defaults to false.
-- DEBUG: [Optional] A boolean value. Outputs debug information for
-  semantic-release plugins. Defaults to false.
-- SCRIPT_PATH: [Optional] A string value. Executes a script with
-  @semantic-release/exec plugin. Scripts must have read and execute permissions.
+- `BRANCH`: [optional string, defaults to 'master']
+
+  A git branch to release to.
+
+- `DRY_RUN`: [optional boolean, defaults to false]
+
+  Skips `prepare`, `publish` and `success` steps.
+
+- `DEBUG`: [optional boolean, defaults to false]
+
+  Outputs debug information for semantic-release plugins.
+
+- `SCRIPT_PATH`: [optional string, defaults to '']
+
+  Executes a script with @semantic-release/exec plugin. Scripts must have read
+  and execute permissions.
 
 ## Examples
 

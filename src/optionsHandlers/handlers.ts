@@ -33,8 +33,13 @@ export const handleDryRunFlag = (): { dryRun: boolean } => {
 
 export const handleDebugFlag = (): boolean => getInput(Flags.debug) === 'true';
 
-export const handleScriptPathFlag = async (): Promise<string> => {
+export const handleScriptPathFlag = async (): Promise<string | undefined> => {
   const scriptPathInput: string = getInput(Flags.scriptPath);
+
+  if (scriptPathInput === '') {
+    return undefined;
+  }
+
   const fileExists = await existsAsync(scriptPathInput);
 
   return fileExists === true

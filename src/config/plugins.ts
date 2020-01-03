@@ -9,7 +9,7 @@ const generateExecPlugin = (
 };
 
 export const generatePlugins = (options: {
-  scriptPath: string;
+  scriptPath: string | undefined;
 }): PluginSpec[] => {
   return [
     [
@@ -21,7 +21,9 @@ export const generatePlugins = (options: {
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
     generateExecPlugin('npx prettier --write CHANGELOG.md'),
-    generateExecPlugin(options.scriptPath),
+    ...(options.scriptPath === undefined
+      ? []
+      : [generateExecPlugin(options.scriptPath)]),
     '@semantic-release/npm',
     [
       '@semantic-release/git',
