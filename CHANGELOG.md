@@ -1,3 +1,17 @@
+## [1.1.1](https://github.com/ridedott/semantic-release-action/compare/v1.1.0...v1.1.1) (2020-01-03)
+
+### Bug Fixes
+
+- do not throw when a script path is empty
+  ([631b4b7](https://github.com/ridedott/semantic-release-action/commit/631b4b738667113ed35f669e2d97ef0d0843662c))
+
+### Chores
+
+- adjust outdated VS Code settings
+  ([815d4af](https://github.com/ridedott/semantic-release-action/commit/815d4af4584ec55c3f78838056c35877cf9a1f51))
+- build the latest version
+  ([5ab806c](https://github.com/ridedott/semantic-release-action/commit/5ab806c7d57568df77e139b868f4096815d68749))
+
 # [1.1.0](https://github.com/ridedott/semantic-release-action/compare/v1.0.10...v1.1.0) (2020-01-03)
 
 ### Chores
