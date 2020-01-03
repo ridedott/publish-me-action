@@ -1,5 +1,6 @@
 import { getInput } from '@actions/core';
 import { exists } from 'fs';
+import { resolve } from 'path';
 import { promisify } from 'util';
 
 export const existsAsync = promisify(exists);
@@ -40,11 +41,16 @@ export const handleScriptPathFlag = async (): Promise<string | undefined> => {
     return undefined;
   }
 
-  const fileExists = await existsAsync(scriptPathInput);
+  const absolutePath = resolve(scriptPathInput);
+
+  const fileExists = await existsAsync(absolutePath);
 
   return fileExists === true
     ? scriptPathInput
     : Promise.reject(
-        new Error('The file specified in SCRIPT_PATH does not exist.'),
+        new Error(
+          `The file specified in SCRIPT_PATH (${scriptPathInput}), ` +
+            `resolved to ${absolutePath}, does not exist.`,
+        ),
       );
 };
