@@ -29,6 +29,7 @@
     "commitlint",
     "dependabot",
     "docblock",
+    "dottbott",
     "editorconfig",
     "gitignore",
     "mergeable",

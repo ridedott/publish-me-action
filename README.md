@@ -11,26 +11,225 @@ Automatically releases new versions with
 
 ## Usage
 
-Add
-[required secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners#creating-and-using-secrets-encrypted-variables)
-in your repository (settings -> secrets).
+To start using the action, one needs to add a workflow file to a repository. For
+a quick start, see a simple example:
 
-Personal `GITHUB_TOKEN_WORKAROUND` token (scopes enabled: `read:packages`,
-`repo`, `write:packages`) is used as `GITHUB_TOKEN` because GitHub Actions token
-does not support pushing to protected branches.
+```yaml
+# .github/workflows/continuous-delivery.yaml
 
-Add a workflow file to your repository to create custom automated processes.
+name: Continuous Delivery
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          # Fetch all history.
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Release
+        uses: ridedott/semantic-release-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+```
+
+For more advanced configuration options and examples, please refer to the
+sections below.
+
+### Environment variables
+
+Environment variables are used to provide secrets to the action. Secrets can be
+set for a repository in the
+[`settings -> secrets`](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners#creating-and-using-secrets-encrypted-variables)
+page.
+
+#### GITHUB_TOKEN
+
+A `GITHUB_TOKEN` variable must be set to a GitHub token with the `repo` scopes
+enabled.
+
+If no branch protection is enabled, a default GitHub Actions token
+(`secrets.GITHUB_TOKEN`) can be used. However, if the branch protection is
+enabled, a
+[Personal Access Token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
+must be used instead with permissions to push to a chosen release branch.
+
+As an example, this repository uses a Personal Access Token of a user
+`DottBott`, which is a GitHub account registered with a purpose of performing
+automated actions.
+
+#### NPM_TOKEN
+
+An `NPM_TOKEN` variable must be set to an authentication token of a chosen npm
+registry. See the [examples](#examples) section on how to use this action with
+npm and GitHub Packages.
 
 ### Inputs
 
-- BRANCH: [Optional] Boolean value expected. Git branch to release from. If not
-  provided master branch will be used for release.
-- DRY_RUN: [Optional] String value expected. Dry-run skips `prepare`, `publish`
-  and `success` steps. If not provided defaults to false.
-- DEBUG: [Optional] Boolean value expected. Outputs debug information for
-  semantic-release plugins. If not provided, defaults to false.
-- SCRIPT_PATH: [Optional] String value expected. Executes script with
+Inputs are used to configure the behavior of the action.
+
+- BRANCH: [Optional] A string value, git branch to release from. If it is not
+  provided, then the master branch is used for a release.
+- DRY_RUN: [Optional] A boolean value. Dry-run skips `prepare`, `publish` and
+  `success` steps. Defaults to false.
+- DEBUG: [Optional] A boolean value. Outputs debug information for
+  semantic-release plugins. Defaults to false.
+- SCRIPT_PATH: [Optional] A string value. Executes a script with
   @semantic-release/exec plugin. Scripts must have read and execute permissions.
+
+## Examples
+
+### Publish to GitHub Packages
+
+1. Add a registry configuration to a `package.json` file:
+   ```json
+   {
+     "publishConfig": {
+       "access": "restricted",
+       "registry": "https://npm.pkg.github.com"
+     }
+   }
+   ```
+2. Use the following configuration of an action:
+
+   ```yaml
+   # .github/workflows/continuous-delivery.yaml
+
+   name: Continuous Delivery
+
+   on:
+     push:
+       branches:
+         - master
+
+   jobs:
+     release:
+       name: Release
+       runs-on: ubuntu-latest
+       steps:
+         - name: Checkout
+           uses: actions/checkout@v2
+           with:
+             # Fetch all history.
+             fetch-depth: 0
+             persist-credentials: false
+         - name: Release
+           uses: ridedott/semantic-release-action@master
+           env:
+             # Use an automatically populated `GITHUB_TOKEN` environment
+             # variable.
+             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+             # `GITHUB_TOKEN` can also be used to authenticate with GitHub
+             # Packages.
+             NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+   ```
+
+### Publish to npm
+
+1. Add a registry configuration to a `package.json` file:
+   ```json
+   {
+     "publishConfig": {
+       "access": "restricted",
+       "registry": "https://registry.npmjs.org"
+     }
+   }
+   ```
+2. Use the following configuration of an action:
+
+   ```yaml
+   # .github/workflows/continuous-delivery.yaml
+
+   name: Continuous Delivery
+
+   on:
+     push:
+       branches:
+         - master
+
+   jobs:
+     release:
+       name: Release
+       runs-on: ubuntu-latest
+       steps:
+         - name: Checkout
+           uses: actions/checkout@v2
+           with:
+             # Fetch all history.
+             fetch-depth: 0
+             persist-credentials: false
+         - name: Release
+           uses: ridedott/semantic-release-action@master
+           env:
+             # Use an automatically populated `GITHUB_TOKEN` environment
+             # variable.
+             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+             # See https://docs.npmjs.com/about-authentication-tokens for
+             # information on how to acquire a token.
+             NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+   ```
+
+### Publish to GitHub Packages with branch protection enabled
+
+1. Add a registry configuration to a `package.json` file:
+   ```json
+   {
+     "publishConfig": {
+       "access": "restricted",
+       "registry": "https://npm.pkg.github.com"
+     }
+   }
+   ```
+2. Use the following configuration of an action:
+
+   ```yaml
+   # .github/workflows/continuous-delivery.yaml
+
+   name: Continuous Delivery
+
+   on:
+     push:
+       branches:
+         - master
+
+   jobs:
+     release:
+       name: Release
+       runs-on: ubuntu-latest
+       steps:
+         - name: Checkout
+           uses: actions/checkout@v2
+           with:
+             # Fetch all history.
+             fetch-depth: 0
+             persist-credentials: false
+         - name: Release
+           uses: ridedott/semantic-release-action@master
+           env:
+             # Use a manually populated `GITHUB_TOKEN_WORKAROUND` environment
+             # variable with permissions to push to a protected branch. This
+             # variable can have an arbitrary name, as an example, this
+             # repository uses `GITHUB_TOKEN_DOTTBOTT`. It is recommended
+             # to leave the following comment for other developers to be
+             # aware of the reasoning behind it:
+             #
+             # This must be used as GitHub Actions token does not support
+             # pushing to protected branches.
+             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_WORKAROUND }}
+             # Regular `GITHUB_TOKEN` can be used to authenticate with GitHub
+             # Packages, but a custom `GITHUB_TOKEN_WORKAROUND` can also be used
+             # as long as it has `packages:write` permission granted.
+             NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+   ```
 
 ## Getting Started
 
