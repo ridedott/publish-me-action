@@ -1,3 +1,5 @@
 import { PluginSpec } from 'semantic-release';
-export declare const plugins: PluginSpec[];
+export declare const generatePlugins: (options: {
+    scriptPath: string;
+}) => PluginSpec[];
 //# sourceMappingURL=plugins.d.ts.map

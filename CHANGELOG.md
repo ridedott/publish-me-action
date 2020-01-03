@@ -1,3 +1,119 @@
+# [1.1.0](https://github.com/ridedott/semantic-release-action/compare/v1.0.10...v1.1.0) (2020-01-03)
+
+### Chores
+
+- **deps:** bump @actions/github from 1.1.0 to 2.0.0
+  ([191b160](https://github.com/ridedott/semantic-release-action/commit/191b1608579ff20dfc837295c3fcd6c599526c29))
+- **deps:** bump @semantic-release/changelog from 3.0.5 to 3.0.6
+  ([521a339](https://github.com/ridedott/semantic-release-action/commit/521a33967c71ddeda94b7a372f77079b0150e303))
+- **deps:** bump @semantic-release/npm from 5.3.4 to 5.3.5
+  ([bdcf919](https://github.com/ridedott/semantic-release-action/commit/bdcf9198a9f685ce019bd9d356714e318656584a))
+- **deps:** bump @semantic-release/release-notes-generator from 7.3.3 to 7.3.4
+  ([412c6fd](https://github.com/ridedott/semantic-release-action/commit/412c6fd494bfd6d7115142b944fc62cb91e2b1bd))
+- **deps:** bump @semantic-release/release-notes-generator from 7.3.4 to 7.3.5
+  ([db67382](https://github.com/ridedott/semantic-release-action/commit/db67382ea7dcee364fdc580061a6890da26ae6a3))
+- **deps:** bump semantic-release from 15.13.31 to 15.14.0
+  ([a4cfb65](https://github.com/ridedott/semantic-release-action/commit/a4cfb6523d044284a881cd8793d85a6ef8ac6c1a))
+- **deps-dev:** bump @commitlint/cli from 8.2.0 to 8.3.3
+  ([d07a853](https://github.com/ridedott/semantic-release-action/commit/d07a853281b49e459217fad2ae01066254c9d77d))
+- **deps-dev:** bump @commitlint/config-conventional from 8.2.0 to 8.3.3
+  ([c9b19bc](https://github.com/ridedott/semantic-release-action/commit/c9b19bc73f0b610f768f3656c52b6c8c855fd53c))
+- **deps-dev:** bump @ridedott/eslint-config from 0.4.67 to 0.4.73
+  ([8e5ca60](https://github.com/ridedott/semantic-release-action/commit/8e5ca6042a15b6701812675146cf08aaaa5f1c32))
+- **deps-dev:** bump @ridedott/eslint-config from 0.4.73 to 0.4.74
+  ([674a0d1](https://github.com/ridedott/semantic-release-action/commit/674a0d157142961188c412f110ddc50c0286facd))
+- **deps-dev:** bump @ridedott/eslint-config from 0.4.74 to 0.4.75
+  ([04ceb42](https://github.com/ridedott/semantic-release-action/commit/04ceb4266f9491f383af0f015d55ccadfa25ba83))
+- **deps-dev:** bump @ridedott/eslint-config from 0.4.75 to 0.4.76
+  ([4642809](https://github.com/ridedott/semantic-release-action/commit/464280933ffa32172cb2f646bfc4486e8384e5de))
+- **deps-dev:** bump @types/jest from 24.0.23 to 24.0.24
+  ([9100302](https://github.com/ridedott/semantic-release-action/commit/9100302c78d299204a2537b6c79830747cf60414))
+- **deps-dev:** bump @types/jest from 24.0.24 to 24.0.25
+  ([49f5e5d](https://github.com/ridedott/semantic-release-action/commit/49f5e5d0932defbb4c36c1e5eb6843d4e3e6cfa3))
+- **deps-dev:** bump @types/node from 12.12.11 to 12.12.12
+  ([b1820ab](https://github.com/ridedott/semantic-release-action/commit/b1820abc0543e676d51fbc185586247586fc8374))
+- **deps-dev:** bump @types/node from 12.12.12 to 12.12.13
+  ([0de437e](https://github.com/ridedott/semantic-release-action/commit/0de437e3450a1bd597337ca2f774b9e985004b74))
+- **deps-dev:** bump @types/node from 12.12.13 to 12.12.14
+  ([a89cf75](https://github.com/ridedott/semantic-release-action/commit/a89cf755667b7702be9a07d384abd4b3a1663611))
+- **deps-dev:** bump @types/node from 12.12.14 to 12.12.15
+  ([44b9786](https://github.com/ridedott/semantic-release-action/commit/44b978644028eaba0c7c5ec18da792797e9ee8e2))
+- **deps-dev:** bump @types/node from 12.12.15 to 12.12.16
+  ([a8f0266](https://github.com/ridedott/semantic-release-action/commit/a8f02668c8189be745ba8d95b33b902095ac8986))
+- **deps-dev:** bump @types/node from 12.12.16 to 12.12.17
+  ([5771f0a](https://github.com/ridedott/semantic-release-action/commit/5771f0a58b1626050d3446da7f29aa262f6f072c))
+- **deps-dev:** bump @types/node from 12.12.17 to 12.12.18
+  ([fa26545](https://github.com/ridedott/semantic-release-action/commit/fa265455c5d4d9d86a07aa220d077de368e6346f))
+- **deps-dev:** bump @types/node from 12.12.18 to 12.12.19
+  ([7a112d9](https://github.com/ridedott/semantic-release-action/commit/7a112d9bb5ca1dacf3ee5fd2f0c42d925638c87a))
+- **deps-dev:** bump @types/node from 12.12.19 to 12.12.20
+  ([2237bbc](https://github.com/ridedott/semantic-release-action/commit/2237bbc6fe2adf203c0dc8aabaf05a538e5431a8))
+- **deps-dev:** bump @types/node from 12.12.20 to 12.12.21
+  ([cb8df87](https://github.com/ridedott/semantic-release-action/commit/cb8df878e23fd01b688ef89706f133697d4fbcdc))
+- **deps-dev:** bump @types/node from 12.12.21 to 13.1.0
+  ([7952d0e](https://github.com/ridedott/semantic-release-action/commit/7952d0e3aaf3e007f39660d36cc889e1ed7313ba))
+- **deps-dev:** bump @types/node from 12.12.8 to 12.12.9
+  ([5a7f3b1](https://github.com/ridedott/semantic-release-action/commit/5a7f3b1dac7a1c08b9bbc48dc81ea5b74109f411))
+- **deps-dev:** bump @types/node from 12.12.9 to 12.12.11
+  ([9a2df0f](https://github.com/ridedott/semantic-release-action/commit/9a2df0f4196d67e24a32c31976fe124c365fed27))
+- **deps-dev:** bump @types/node from 13.1.0 to 13.1.1
+  ([563cb4f](https://github.com/ridedott/semantic-release-action/commit/563cb4fd9964263010d8d503aafad7146defbba9))
+- **deps-dev:** bump @types/node from 13.1.1 to 13.1.2
+  ([408cf5c](https://github.com/ridedott/semantic-release-action/commit/408cf5c0aa1f4b3dcb28d2e09502e77181765141))
+- **deps-dev:** bump cspell from 4.0.34 to 4.0.35
+  ([2c67122](https://github.com/ridedott/semantic-release-action/commit/2c671223799193e3967c63fd8480e110a6774d8a))
+- **deps-dev:** bump cspell from 4.0.35 to 4.0.36
+  ([dd1491e](https://github.com/ridedott/semantic-release-action/commit/dd1491e697e584b35603b2013ead2813470962e0))
+- **deps-dev:** bump cspell from 4.0.36 to 4.0.37
+  ([43a5b46](https://github.com/ridedott/semantic-release-action/commit/43a5b465f62c1e42378ea15350a9418c4f9d8151))
+- **deps-dev:** bump cspell from 4.0.37 to 4.0.38
+  ([98dfdb8](https://github.com/ridedott/semantic-release-action/commit/98dfdb82d100dfd7afc2078851f867b4ce9273b3))
+- **deps-dev:** bump cspell from 4.0.38 to 4.0.40
+  ([379a70b](https://github.com/ridedott/semantic-release-action/commit/379a70b57beca7a8e3a861cc19d0d2b76fe27bbb))
+- **deps-dev:** bump cspell from 4.0.40 to 4.0.41
+  ([ba17b48](https://github.com/ridedott/semantic-release-action/commit/ba17b48feb31fe9d8d2772719d3db6ac19f9939c))
+- **deps-dev:** bump cspell from 4.0.41 to 4.0.42
+  ([a0b6a07](https://github.com/ridedott/semantic-release-action/commit/a0b6a07528d31389f0c14cb53512c8c3aca53450))
+- **deps-dev:** bump cspell from 4.0.42 to 4.0.43
+  ([fb24a53](https://github.com/ridedott/semantic-release-action/commit/fb24a538281da5d9698041fbe6ba9619f5c40d97))
+- **deps-dev:** bump cspell from 4.0.43 to 4.0.44
+  ([f07a1f8](https://github.com/ridedott/semantic-release-action/commit/f07a1f894dd6e81813b3b2553d415a0816b83e02))
+- **deps-dev:** bump eslint from 6.6.0 to 6.7.0
+  ([0e82067](https://github.com/ridedott/semantic-release-action/commit/0e82067bb8530787e9abf6f4c849e6137edf74fd))
+- **deps-dev:** bump eslint from 6.7.0 to 6.7.1
+  ([b101d4d](https://github.com/ridedott/semantic-release-action/commit/b101d4dd2bfbcf39a9621f2ca45715a69ca17d5a))
+- **deps-dev:** bump eslint from 6.7.1 to 6.7.2
+  ([d334d0f](https://github.com/ridedott/semantic-release-action/commit/d334d0f30c4a5f7d366aed859ff28961a52c70f9))
+- **deps-dev:** bump eslint from 6.7.2 to 6.8.0
+  ([a838343](https://github.com/ridedott/semantic-release-action/commit/a8383432eb9d511defea1a2f34ee4ffd79b1b3da))
+- **deps-dev:** bump lint-staged from 9.4.3 to 9.5.0
+  ([f8b3216](https://github.com/ridedott/semantic-release-action/commit/f8b3216a0a2aece6e8c6fdd765392f5e5da35cbc))
+- **deps-dev:** bump ts-jest from 24.1.0 to 24.2.0
+  ([ca2bb05](https://github.com/ridedott/semantic-release-action/commit/ca2bb0500612ee530cd24c653353e908481d19f7))
+- **deps-dev:** bump ts-node from 8.5.2 to 8.5.3
+  ([ffc5d07](https://github.com/ridedott/semantic-release-action/commit/ffc5d07792ddc09189f97f24f92451a741a0ccde))
+- **deps-dev:** bump ts-node from 8.5.3 to 8.5.4
+  ([d86b0b4](https://github.com/ridedott/semantic-release-action/commit/d86b0b435a4e4033441d12e067d7307b3634ad42))
+- **deps-dev:** bump typescript from 3.7.2 to 3.7.3
+  ([500b809](https://github.com/ridedott/semantic-release-action/commit/500b809be1883cf134d23c7aa7365144decee137))
+- **deps-dev:** bump typescript from 3.7.3 to 3.7.4
+  ([2ae9c04](https://github.com/ridedott/semantic-release-action/commit/2ae9c04c83a1b971a65ae4cb577be629b71de1ba))
+
+### Continuous Integration
+
+- use actions/checkout@v2
+  ([ffe507a](https://github.com/ridedott/semantic-release-action/commit/ffe507a67236b09804ef3002229afe0a0e78d261))
+
+### Documentation
+
+- describe environment variables more precisely and provide examples
+  ([49d6efc](https://github.com/ridedott/semantic-release-action/commit/49d6efcdb054d15dbd0b5962725c247ad31d2727))
+
+### Features
+
+- **build:** add custom script handling and execution
+  ([4ec8221](https://github.com/ridedott/semantic-release-action/commit/4ec8221da63ca6197da9ffbf6a055ac64c5f0caf))
+
 ## [1.0.10](https://github.com/ridedott/semantic-release-action/compare/v1.0.9...v1.0.10) (2019-11-18)
 
 ### Chores
