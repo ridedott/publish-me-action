@@ -23,7 +23,10 @@ if (handleDebugFlag() === true) {
 }
 
 const main = async (): Promise<void> => {
-  await runTask(Commands.PreInstallPlugins);
+  await Promise.all([
+    runTask(Commands.PreInstallPlugins),
+    runTask(Commands.RemoveNpmrc),
+  ]);
 
   const result = await semanticRelease({
     /* eslint-disable unicorn/prevent-abbreviations */
@@ -39,7 +42,6 @@ const main = async (): Promise<void> => {
     /* eslint-enable unicorn/prevent-abbreviations */
   });
 
-  await runTask(Commands.RemoveNpmrc);
   await reportResults(result);
 };
 
