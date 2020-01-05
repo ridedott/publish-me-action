@@ -1,3 +1,21 @@
+## [1.1.2](https://github.com/ridedott/semantic-release-action/compare/v1.1.1...v1.1.2) (2020-01-05)
+
+### Bug Fixes
+
+- remove local .npmrc before running Semantic Release
+  ([02f61a9](https://github.com/ridedott/semantic-release-action/commit/02f61a921cf2fd2c51227f46413227bb7c501ee2))
+
+### Chores
+
+- **deps-dev:** bump @commitlint/cli from 8.3.3 to 8.3.4
+  ([9ebcaea](https://github.com/ridedott/semantic-release-action/commit/9ebcaea18edb10dc2dd54a6313b2822b2115d7fa))
+- **deps-dev:** bump @commitlint/config-conventional from 8.3.3 to 8.3.4
+  ([d1f9f4c](https://github.com/ridedott/semantic-release-action/commit/d1f9f4cb780d0dfcee91bde8d56bf19b7c4c94ee))
+- **deps-dev:** bump @types/node from 13.1.2 to 13.1.4
+  ([da5a11c](https://github.com/ridedott/semantic-release-action/commit/da5a11c1ac33170a63d6310586cb54480fb7a41d))
+- **deps-dev:** bump @zeit/ncc from 0.20.5 to 0.21.0
+  ([59eaa4b](https://github.com/ridedott/semantic-release-action/commit/59eaa4b818f689d065a1a6fe47c4fad50a5a0d05))
+
 ## [1.1.1](https://github.com/ridedott/semantic-release-action/compare/v1.1.0...v1.1.1) (2020-01-03)
 
 ### Bug Fixes
