@@ -1,3 +1,33 @@
+## [1.1.3](https://github.com/ridedott/semantic-release-action/compare/v1.1.2...v1.1.3) (2020-01-10)
+
+### Bug Fixes
+
+- use previous version of git plugin
+  ([cef1db2](https://github.com/ridedott/semantic-release-action/commit/cef1db28f9c2103a7063f7310ea66002c8cf8a69))
+
+### Chores
+
+- **deps-dev:** bump @types/node from 13.1.4 to 13.1.5
+  ([c9120bf](https://github.com/ridedott/semantic-release-action/commit/c9120bfac410b6e6c863841dfdd2d9c653299d2b))
+- **deps-dev:** bump @types/node from 13.1.5 to 13.1.6
+  ([df8a29b](https://github.com/ridedott/semantic-release-action/commit/df8a29ba181faa4a5962e4355f8b99a234de365c))
+- **deps-dev:** bump husky from 3.1.0 to 4.0.0
+  ([83aebed](https://github.com/ridedott/semantic-release-action/commit/83aebede5407d9aafae32e9bad8f67c2eee44e5a))
+- **deps-dev:** bump husky from 4.0.0 to 4.0.1
+  ([af5d6e7](https://github.com/ridedott/semantic-release-action/commit/af5d6e77d28171c67fcc711078b3cc3ed8487155))
+- **deps-dev:** bump husky from 4.0.1 to 4.0.3
+  ([0769ba6](https://github.com/ridedott/semantic-release-action/commit/0769ba6637a40c385d391a2dfb8f42e5e7d22a65))
+- **deps-dev:** bump husky from 4.0.3 to 4.0.4
+  ([bac2435](https://github.com/ridedott/semantic-release-action/commit/bac24354864e6464c7d0d61d75635bb5ae2fdf5d))
+- **deps-dev:** bump husky from 4.0.4 to 4.0.5
+  ([a7049b0](https://github.com/ridedott/semantic-release-action/commit/a7049b0de1318a5040a42d4f3ee7373a934f306d))
+- **deps-dev:** bump husky from 4.0.5 to 4.0.6
+  ([2dda062](https://github.com/ridedott/semantic-release-action/commit/2dda062a7d0dac6fe074f457c62a7039f57e3709))
+- **deps-dev:** bump ts-jest from 24.2.0 to 24.3.0
+  ([621088d](https://github.com/ridedott/semantic-release-action/commit/621088d9128d8d7bb303dba0ad2ac36ab01177bf))
+- **deps-dev:** bump ts-node from 8.5.4 to 8.6.0
+  ([72263ae](https://github.com/ridedott/semantic-release-action/commit/72263ae8d98784c588127e80aa1b4e6cdb94bad5))
+
 ## [1.1.2](https://github.com/ridedott/semantic-release-action/compare/v1.1.1...v1.1.2) (2020-01-05)
 
 ### Bug Fixes
