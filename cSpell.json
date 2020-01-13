@@ -27,6 +27,7 @@
   "words": [
     "codeowners",
     "commitlint",
+    "coverallsapp",
     "dependabot",
     "docblock",
     "dottbott",

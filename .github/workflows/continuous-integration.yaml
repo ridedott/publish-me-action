@@ -151,4 +151,4 @@ jobs:
       - name: Auto merge
         uses: ridedott/dependabot-auto-merge-action@master
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_DOTTBOTT }}
