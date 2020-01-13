@@ -1,8 +1,8 @@
-# semantic-release-action
+# publish-me-action
 
-[![license: MIT](https://img.shields.io/github/license/ridedott/semantic-release-action)](https://github.com/ridedott/semantic-release-action/blob/master/LICENSE)
-[![GitHub Actions Status](https://github.com/ridedott/auto-merge-action/workflows/Continuous%20Integration/badge.svg?branch=master)](https://github.com/ridedott/semantic-release-action/actions)
-[![Coveralls](https://coveralls.io/repos/github/ridedott/semantic-release-action/badge.svg)](https://coveralls.io/github/ridedott/semantic-release-action)
+[![license: MIT](https://img.shields.io/github/license/ridedott/publish-me-action)](https://github.com/ridedott/publish-me-action/blob/master/LICENSE)
+[![GitHub Actions Status](https://github.com/ridedott/auto-merge-action/workflows/Continuous%20Integration/badge.svg?branch=master)](https://github.com/ridedott/publish-me-action/actions)
+[![Coveralls](https://coveralls.io/repos/github/ridedott/publish-me-action/badge.svg)](https://coveralls.io/github/ridedott/publish-me-action)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
@@ -36,7 +36,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Release
-        uses: ridedott/semantic-release-action@master
+        uses: ridedott/publish-me-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -128,7 +128,7 @@ Inputs are used to configure the behavior of the action.
              fetch-depth: 0
              persist-credentials: false
          - name: Release
-           uses: ridedott/semantic-release-action@master
+           uses: ridedott/publish-me-action@master
            env:
              # Use an automatically populated `GITHUB_TOKEN` environment
              # variable.
@@ -173,7 +173,7 @@ Inputs are used to configure the behavior of the action.
              fetch-depth: 0
              persist-credentials: false
          - name: Release
-           uses: ridedott/semantic-release-action@master
+           uses: ridedott/publish-me-action@master
            env:
              # Use an automatically populated `GITHUB_TOKEN` environment
              # variable.
@@ -218,7 +218,7 @@ Inputs are used to configure the behavior of the action.
              fetch-depth: 0
              persist-credentials: false
          - name: Release
-           uses: ridedott/semantic-release-action@master
+           uses: ridedott/publish-me-action@master
            env:
              # Use a manually populated `GITHUB_TOKEN_WORKAROUND` environment
              # variable with permissions to push to a protected branch. This
@@ -260,18 +260,18 @@ Minimal requirements to set up the project:
 Start by cloning the repository:
 
 ```bash
-git clone git@github.com:ridedott/semantic-release-action.git
+git clone git@github.com:ridedott/publish-me-action.git
 ```
 
 In case you don't have a git client, you can get the latest version directly by
 using
-[this link](https://github.com/ridedott/semantic-release-action/archive/master.zip)
+[this link](https://github.com/ridedott/publish-me-action/archive/master.zip)
 and extracting the downloaded archive.
 
 Go the the right directory and install dependencies:
 
 ```bash
-cd semantic-release-action
+cd publish-me-action
 npm install
 ```
 

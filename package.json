@@ -61,7 +61,7 @@
     ]
   },
   "main": "dist/index.js",
-  "name": "@ridedott/semantic-release-action",
+  "name": "@ridedott/publish-me-action",
   "private": false,
   "publishConfig": {
     "access": "restricted",
@@ -69,7 +69,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ridedott/semantic-release-action.git"
+    "url": "git+https://github.com/ridedott/publish-me-action.git"
   },
   "scripts": {
     "build": "run-s clean:dist build:dist",
