@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/ridedott/publish-me-action/compare/v1.1.5...v1.1.6) (2020-01-13)
+
+### Documentation
+
+- align with a new name of the action
+  ([a7835ca](https://github.com/ridedott/publish-me-action/commit/a7835caf8128dc280546cb3d606a0314606accb1))
+
 ## [1.1.5](https://github.com/ridedott/publish-me-action/compare/v1.1.4...v1.1.5) (2020-01-13)
 
 ### Chores
