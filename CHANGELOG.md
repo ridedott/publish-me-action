@@ -1,3 +1,23 @@
+## [1.1.4](https://github.com/ridedott/semantic-release-action/compare/v1.1.3...v1.1.4) (2020-01-13)
+
+### Bug Fixes
+
+- change an extension of action.yaml
+  ([0451ae5](https://github.com/ridedott/semantic-release-action/commit/0451ae545d3b6a01f70fc7950b8a8f14eb5a96b7))
+
+### Chores
+
+- rename the action
+  ([e763dda](https://github.com/ridedott/semantic-release-action/commit/e763dda7316f100e10e3925d453f69852578bf26))
+- **deps:** bump @actions/core from 1.2.0 to 1.2.1
+  ([ea90167](https://github.com/ridedott/semantic-release-action/commit/ea901672ccc5219c094310f15eee5e8116f6337f))
+- **deps:** bump @actions/github from 2.0.0 to 2.0.1
+  ([31aeb54](https://github.com/ridedott/semantic-release-action/commit/31aeb541820bc3805d9ecbcbb80c3381b0e14af7))
+- **deps-dev:** bump husky from 4.0.6 to 4.0.7
+  ([ba9d9d0](https://github.com/ridedott/semantic-release-action/commit/ba9d9d04438bc6658664ca90308617868ee47905))
+- **deps-dev:** bump ts-node from 8.6.0 to 8.6.1
+  ([73d5043](https://github.com/ridedott/semantic-release-action/commit/73d50438e28c39466f587df7cd815ccbd96f4b1d))
+
 ## [1.1.3](https://github.com/ridedott/semantic-release-action/compare/v1.1.2...v1.1.3) (2020-01-10)
 
 ### Bug Fixes
