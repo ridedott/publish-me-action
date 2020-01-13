@@ -22,7 +22,7 @@ inputs:
       Executes a script with @semantic-release/exec plugin. Scripts must have
       read and execute permissions.
     required: false
-name: Semantic Release
+name: Publish me!
 runs:
   main: dist/index.js
   using: node12
