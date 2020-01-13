@@ -1,3 +1,15 @@
+## [1.1.7](https://github.com/ridedott/publish-me-action/compare/v1.1.6...v1.1.7) (2020-01-13)
+
+### Bug Fixes
+
+- pin plugins to previous versions
+  ([8174b43](https://github.com/ridedott/publish-me-action/commit/8174b430071208cbe24c10830299e6755c234ab2))
+
+### Chores
+
+- **deps-dev:** bump ts-node from 8.6.1 to 8.6.2
+  ([6f4979e](https://github.com/ridedott/publish-me-action/commit/6f4979e35a0e3cd07ed3174c0e91c118b5d7ea9b))
+
 ## [1.1.6](https://github.com/ridedott/publish-me-action/compare/v1.1.5...v1.1.6) (2020-01-13)
 
 ### Documentation
