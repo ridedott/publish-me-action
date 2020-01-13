@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/ridedott/semantic-release-action/compare/v1.1.4...v1.1.5) (2020-01-13)
+
+### Chores
+
+- rename the action
+  ([ef9294f](https://github.com/ridedott/semantic-release-action/commit/ef9294f5a61e43da12c2ed093eaa14c4e3f2dbf2))
+
 ## [1.1.4](https://github.com/ridedott/semantic-release-action/compare/v1.1.3...v1.1.4) (2020-01-13)
 
 ### Bug Fixes
