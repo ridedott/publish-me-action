@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/ridedott/publish-me-action/compare/v1.1.7...v1.1.8) (2020-01-13)
+
+### Continuous Integration
+
+- use a correct GitHub token in the Auto Merge Action
+  ([dfc8f24](https://github.com/ridedott/publish-me-action/commit/dfc8f24dff34ed8e521f8f8d0940c7817fde6226))
+
 ## [1.1.7](https://github.com/ridedott/publish-me-action/compare/v1.1.6...v1.1.7) (2020-01-13)
 
 ### Bug Fixes
