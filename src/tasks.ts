@@ -55,13 +55,13 @@ export const runTask = async (task: Commands): Promise<void> => {
 
       return runCommand(`npm install \
         --no-save \
-        semantic-release@15.14.0 \
-        @semantic-release/changelog@3.0.6 \
-        @semantic-release/commit-analyzer@6.3.3 \
-        @semantic-release/exec@3.3.8 \
-        @semantic-release/git@7.0.18 \
-        @semantic-release/npm@5.3.5 \
-        @semantic-release/release-notes-generator@7.3.5`);
+        semantic-release \
+        @semantic-release/changelog \
+        @semantic-release/commit-analyzer \
+        @semantic-release/exec \
+        @semantic-release/git \
+        @semantic-release/npm \
+        @semantic-release/release-notes-generator`);
     default:
       throw new Error(`task ${task} not found`);
   }
