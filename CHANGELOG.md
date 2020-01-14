@@ -1,3 +1,10 @@
+## [1.1.11](https://github.com/ridedott/publish-me-action/compare/v1.1.10...v1.1.11) (2020-01-14)
+
+### Bug Fixes
+
+- use latest versions of plugins
+  ([d75e4c5](https://github.com/ridedott/publish-me-action/commit/d75e4c54d6d3c7df81539c7f73fd165fc624008c))
+
 ## [1.1.10](https://github.com/ridedott/publish-me-action/compare/v1.1.9...v1.1.10) (2020-01-14)
 
 ### Chores
