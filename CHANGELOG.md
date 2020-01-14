@@ -1,3 +1,10 @@
+## [1.1.9](https://github.com/ridedott/publish-me-action/compare/v1.1.8...v1.1.9) (2020-01-14)
+
+### Chores
+
+- **deps-dev:** bump husky from 4.0.7 to 4.0.8
+  ([85980ca](https://github.com/ridedott/publish-me-action/commit/85980cae69ac34a86a0ef7367bcf78cd3080b662))
+
 ## [1.1.8](https://github.com/ridedott/publish-me-action/compare/v1.1.7...v1.1.8) (2020-01-13)
 
 ### Continuous Integration
