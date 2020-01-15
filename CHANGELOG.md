@@ -1,3 +1,26 @@
+## [1.1.12](https://github.com/ridedott/publish-me-action/compare/v1.1.11...v1.1.12) (2020-01-15)
+
+### Bug Fixes
+
+- update package-lock.json
+  ([a951b30](https://github.com/ridedott/publish-me-action/commit/a951b300d5916f6379c1e893c5c0eb3883a56391))
+
+### Chores
+
+- build the latest version
+  ([1f733f1](https://github.com/ridedott/publish-me-action/commit/1f733f1eb0118f91bd1c622eb1101ae6e560bf7e))
+- **deps-dev:** bump @types/jest from 24.0.25 to 24.9.0
+  ([78e35e7](https://github.com/ridedott/publish-me-action/commit/78e35e76c245eb1d3eae3d113890953e2095a0d1))
+- build the latest version
+  ([be9d914](https://github.com/ridedott/publish-me-action/commit/be9d9144e3be907016f345819a49c2afc896a939))
+- **deps-dev:** bump @types/node from 13.1.6 to 13.1.7
+  ([6ddfed7](https://github.com/ridedott/publish-me-action/commit/6ddfed77298aa9436bec80d2ae577b4531c08b36))
+
+### Reverts
+
+- fix: use latest versions of plugins
+  ([d04a7a6](https://github.com/ridedott/publish-me-action/commit/d04a7a65f89ec78e94b821c336856d83d84f51c5))
+
 ## [1.1.11](https://github.com/ridedott/publish-me-action/compare/v1.1.10...v1.1.11) (2020-01-14)
 
 ### Bug Fixes
