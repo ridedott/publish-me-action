@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ridedott/publish-me-action/compare/v1.1.12...v1.2.0) (2020-01-23)
+
+### Features
+
+- skip publishing to npm if NPM_TOKEN is not defined
+  ([6744f7d](https://github.com/ridedott/publish-me-action/commit/6744f7d280cda0aed98d4a9ef871570ce8edc77a))
+
 ## [1.1.12](https://github.com/ridedott/publish-me-action/compare/v1.1.11...v1.1.12) (2020-01-15)
 
 ### Bug Fixes
