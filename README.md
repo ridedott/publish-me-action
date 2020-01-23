@@ -66,9 +66,9 @@ page.
   `DottBott`, which is a GitHub account registered with a purpose of performing
   automated actions.
 
-- NPM_TOKEN: [required string] Must be set to an authentication token of a
-  chosen npm registry. See the [examples](#examples) section on how to use this
-  action with npm and GitHub Packages.
+- NPM_TOKEN: [optional string] An authentication token of a chosen npm registry.
+  If undefined, npm publish will be ignored. See the [examples](#examples)
+  section on how to use this action with npm and GitHub Packages.
 
 ### Inputs
 
@@ -78,13 +78,13 @@ Inputs are used to configure the behavior of the action.
 
   A git branch to release to.
 
-- `DRY_RUN`: [optional boolean, defaults to false]
-
-  Skips `prepare`, `publish` and `success` steps.
-
 - `DEBUG`: [optional boolean, defaults to false]
 
   Outputs debug information for semantic-release plugins.
+
+- `DRY_RUN`: [optional boolean, defaults to false]
+
+  Skips `prepare`, `publish` and `success` steps.
 
 - `SCRIPT_PATH`: [optional string, defaults to '']
 

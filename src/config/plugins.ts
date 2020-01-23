@@ -9,6 +9,7 @@ const generateExecPlugin = (
 };
 
 export const generatePlugins = (options: {
+  publishToNpm: boolean;
   scriptPath: string | undefined;
 }): PluginSpec[] => {
   return [
@@ -24,7 +25,7 @@ export const generatePlugins = (options: {
     ...(options.scriptPath === undefined
       ? []
       : [generateExecPlugin(options.scriptPath)]),
-    '@semantic-release/npm',
+    ...(options.publishToNpm === false ? [] : ['@semantic-release/npm']),
     [
       '@semantic-release/git',
       {

@@ -35,6 +35,7 @@ const main = async (): Promise<void> => {
     ...handleDryRunFlag(),
     parserOpts: parserOptions,
     plugins: generatePlugins({
+      publishToNpm: process.env['NPM_TOKEN'] !== undefined,
       scriptPath: await handleScriptPathFlag(),
     }),
     releaseRules,
