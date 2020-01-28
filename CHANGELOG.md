@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/ridedott/publish-me-action/compare/v1.2.0...v1.2.1) (2020-01-28)
+
+### Chores
+
+- fix lint issues
+  ([ce7f261](https://github.com/ridedott/publish-me-action/commit/ce7f2619e9ac96e1243834b0bbbbf0cd6ef78eb6))
+
 # [1.2.0](https://github.com/ridedott/publish-me-action/compare/v1.1.12...v1.2.0) (2020-01-23)
 
 ### Features
