@@ -1,3 +1,12 @@
+## [1.2.5](https://github.com/ridedott/publish-me-action/compare/v1.2.4...v1.2.5) (2020-01-28)
+
+### Chores
+
+- **deps:** bump semantic-release, @semantic-release/git,
+  @semantic-release/exec, @semantic-release/commit-analyzer and
+  @semantic-release/npm
+  ([678d2f8](https://github.com/ridedott/publish-me-action/commit/678d2f8ce9334b823c639cfac61adec1e427b2e2))
+
 ## [1.2.4](https://github.com/ridedott/publish-me-action/compare/v1.2.3...v1.2.4) (2020-01-28)
 
 ### Chores
