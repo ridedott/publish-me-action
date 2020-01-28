@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/ridedott/publish-me-action/compare/v1.2.3...v1.2.4) (2020-01-28)
+
+### Chores
+
+- **deps-dev:** bump jest and ts-jest
+  ([c111ece](https://github.com/ridedott/publish-me-action/commit/c111ecedf7dd84f963a78926e01b0f619e393c76))
+
 ## [1.2.3](https://github.com/ridedott/publish-me-action/compare/v1.2.2...v1.2.3) (2020-01-28)
 
 ### Chores
