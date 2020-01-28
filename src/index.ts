@@ -1,4 +1,5 @@
 import { setFailed } from '@actions/core';
+import { env as environment } from 'process';
 import * as semanticRelease from 'semantic-release';
 
 import {
@@ -35,7 +36,7 @@ const main = async (): Promise<void> => {
     ...handleDryRunFlag(),
     parserOpts: parserOptions,
     plugins: generatePlugins({
-      publishToNpm: process.env['NPM_TOKEN'] !== undefined,
+      publishToNpm: environment.NPM_TOKEN !== undefined,
       scriptPath: await handleScriptPathFlag(),
     }),
     releaseRules,
