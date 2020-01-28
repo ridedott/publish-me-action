@@ -1,3 +1,14 @@
+## [1.2.2](https://github.com/ridedott/publish-me-action/compare/v1.2.1...v1.2.2) (2020-01-28)
+
+### Chores
+
+- **deps:** bump @semantic-release/changelog from 3.0.6 to 5.0.0
+  ([c3d9921](https://github.com/ridedott/publish-me-action/commit/c3d99217a1459dc711bfdb6756585d38ae7e01cf))
+- **deps:** bump @semantic-release/release-notes-generator from 7.3.5 to 9.0.0
+  ([c68988a](https://github.com/ridedott/publish-me-action/commit/c68988abb6d662185e1a0762839469248bc603a5))
+- **deps-dev:** bump lint-staged from 9.5.0 to 10.0.3
+  ([0cd1eb0](https://github.com/ridedott/publish-me-action/commit/0cd1eb037bb66d12e62350daa9ada9658df41e29))
+
 ## [1.2.1](https://github.com/ridedott/publish-me-action/compare/v1.2.0...v1.2.1) (2020-01-28)
 
 ### Chores
