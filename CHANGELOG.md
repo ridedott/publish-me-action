@@ -1,3 +1,45 @@
+## [1.2.6](https://github.com/ridedott/publish-me-action/compare/v1.2.5...v1.2.6) (2020-02-03)
+
+### Bug Fixes
+
+- revert semantic-release unsupported updates
+  ([e614e8f](https://github.com/ridedott/publish-me-action/commit/e614e8f35eac61e66c286fafd0ea4324490c686c))
+- update build to re-enable releases
+  ([358e7e7](https://github.com/ridedott/publish-me-action/commit/358e7e7965ef4fa9d3c22011ab7fbf20a7c01f0b))
+
+### Chores
+
+- **deps:** bump @semantic-release/commit-analyzer from 8.0.0 to 8.0.1
+  ([3d8654d](https://github.com/ridedott/publish-me-action/commit/3d8654d4f3edb5b5ec37e346f37f6c5f1c2da1f8))
+- **deps:** bump @semantic-release/npm from 7.0.0 to 7.0.1
+  ([b21520b](https://github.com/ridedott/publish-me-action/commit/b21520b5e969188d2574b9de344d09c066cd5a82))
+- **deps:** bump @semantic-release/npm from 7.0.1 to 7.0.2
+  ([08235f3](https://github.com/ridedott/publish-me-action/commit/08235f3d855abfe26d8a2488c86775e5c3c17722))
+- **deps:** bump semantic-release from 17.0.1 to 17.0.2
+  ([f159c93](https://github.com/ridedott/publish-me-action/commit/f159c931a43953919f4d97c9baf886b19734ce28))
+- **deps-dev:** bump @ridedott/eslint-config from 0.4.78 to 0.4.79
+  ([26f2c01](https://github.com/ridedott/publish-me-action/commit/26f2c017b6af488a016af45ff99b0bf9a83805d1))
+- **deps-dev:** bump @types/jest from 25.1.0 to 25.1.1
+  ([449f6be](https://github.com/ridedott/publish-me-action/commit/449f6beb909f5c4c51ea443c77334c469a5f4c60))
+- **deps-dev:** bump @types/node from 13.5.0 to 13.5.1
+  ([8a7bc77](https://github.com/ridedott/publish-me-action/commit/8a7bc77e9fa33af09f24f0bfded882faa70cb665))
+- **deps-dev:** bump @types/node from 13.5.1 to 13.5.2
+  ([a743e6e](https://github.com/ridedott/publish-me-action/commit/a743e6e429d03a88dd84154dc86ec9200c2c1137))
+- **deps-dev:** bump @types/node from 13.5.2 to 13.5.3
+  ([dd7df26](https://github.com/ridedott/publish-me-action/commit/dd7df2629c876466acbae575c828d0a96e708224))
+- **deps-dev:** bump @types/node from 13.5.3 to 13.7.0
+  ([cc56357](https://github.com/ridedott/publish-me-action/commit/cc563576560e22a4631d565838831f8d92e50468))
+- **deps-dev:** bump lint-staged from 10.0.3 to 10.0.4
+  ([4456fac](https://github.com/ridedott/publish-me-action/commit/4456fac415bfc1e3633debd4e0e50349fc5633bf))
+- **deps-dev:** bump lint-staged from 10.0.4 to 10.0.5
+  ([99d6f02](https://github.com/ridedott/publish-me-action/commit/99d6f02a756f2b5a159bf18e9171535dc37d486e))
+- **deps-dev:** bump lint-staged from 10.0.5 to 10.0.6
+  ([15a5d3e](https://github.com/ridedott/publish-me-action/commit/15a5d3ea16fc82dba5498e4deadd23955411d4ee))
+- **deps-dev:** bump lint-staged from 10.0.6 to 10.0.7
+  ([40e61ca](https://github.com/ridedott/publish-me-action/commit/40e61ca1fe46bfc62d8cbe4e936d62d990dd3591))
+- **deps-dev:** bump ts-jest from 25.0.0 to 25.1.0
+  ([d400e98](https://github.com/ridedott/publish-me-action/commit/d400e98d0416db1d6e6fc0843c866c21f4309048))
+
 ## [1.2.5](https://github.com/ridedott/publish-me-action/compare/v1.2.4...v1.2.5) (2020-01-28)
 
 ### Chores
