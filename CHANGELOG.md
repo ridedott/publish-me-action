@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/ridedott/publish-me-action/compare/v1.2.6...v1.2.7) (2020-02-03)
+
+### Chores
+
+- **deps-dev:** bump ts-jest from 25.1.0 to 25.2.0
+  ([a9bb5fc](https://github.com/ridedott/publish-me-action/commit/a9bb5fc93a2bf141d48be631c0fd20def706f4cd))
+
 ## [1.2.6](https://github.com/ridedott/publish-me-action/compare/v1.2.5...v1.2.6) (2020-02-03)
 
 ### Bug Fixes
