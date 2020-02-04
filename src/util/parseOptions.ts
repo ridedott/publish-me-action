@@ -15,11 +15,11 @@ export enum Flags {
 }
 
 export const handleBranchFlag = (): { branch: string } | {} => {
-  const branch: string = getInput(Flags.branch);
+  const branches: string[] = [ getInput(Flags.branch) ];
 
-  if (branch.length > 0) {
+  if (branches.length > 0) {
     return {
-      branch,
+      branches,
     };
   }
 
