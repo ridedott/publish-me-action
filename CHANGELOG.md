@@ -1,3 +1,10 @@
+## [1.2.9](https://github.com/ridedott/publish-me-action/compare/v1.2.8...v1.2.9) (2020-02-04)
+
+### Chores
+
+- **deps-dev:** bump @ridedott/eslint-config from 0.4.79 to 0.4.80
+  ([dfbbc78](https://github.com/ridedott/publish-me-action/commit/dfbbc787491f92f6bc5ce3a5852a623f48332a3f))
+
 ## [1.2.8](https://github.com/ridedott/publish-me-action/compare/v1.2.7...v1.2.8) (2020-02-04)
 
 ### Chores
