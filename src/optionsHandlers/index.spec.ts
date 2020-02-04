@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
 
-import * as handlers from './handlers';
+import * as handlers from '.';
 
 /*
  * Setup and teardown
