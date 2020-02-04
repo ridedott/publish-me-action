@@ -1,3 +1,10 @@
+## [1.2.11](https://github.com/ridedott/publish-me-action/compare/v1.2.10...v1.2.11) (2020-02-04)
+
+### Chores
+
+- update build
+  ([977b47b](https://github.com/ridedott/publish-me-action/commit/977b47b790cc787f9a62daace7bb82a12f5cfff1))
+
 ## [1.2.10](https://github.com/ridedott/publish-me-action/compare/v1.2.9...v1.2.10) (2020-02-04)
 
 ### Bug Fixes
