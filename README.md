@@ -1,5 +1,7 @@
 # publish-me-action
 
+test
+
 [![license: MIT](https://img.shields.io/github/license/ridedott/publish-me-action)](https://github.com/ridedott/publish-me-action/blob/master/LICENSE)
 [![GitHub Actions Status](https://github.com/ridedott/auto-merge-action/workflows/Continuous%20Integration/badge.svg?branch=master)](https://github.com/ridedott/publish-me-action/actions)
 [![Coveralls](https://coveralls.io/repos/github/ridedott/publish-me-action/badge.svg)](https://coveralls.io/github/ridedott/publish-me-action)
