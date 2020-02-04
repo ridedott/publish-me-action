@@ -1,3 +1,10 @@
+## [1.2.10](https://github.com/ridedott/publish-me-action/compare/v1.2.9...v1.2.10) (2020-02-04)
+
+### Bug Fixes
+
+- downgrade semantic-release to re-enable package releases
+  ([350a6a9](https://github.com/ridedott/publish-me-action/commit/350a6a980cdb7fa50bcef9148493ed5d62e1037b))
+
 ## [1.2.9](https://github.com/ridedott/publish-me-action/compare/v1.2.8...v1.2.9) (2020-02-04)
 
 ### Chores
