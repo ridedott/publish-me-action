@@ -48,9 +48,9 @@ export const handleScriptPathFlag = async (): Promise<string | undefined> => {
   return fileExists === true
     ? scriptPathInput
     : Promise.reject(
-        new Error(
-          `The file specified in SCRIPT_PATH (${scriptPathInput}), ` +
-            `resolved to ${absolutePath}, does not exist.`,
-        ),
-      );
+      new Error(
+        `The file specified in SCRIPT_PATH (${scriptPathInput}), ` +
+        `resolved to ${absolutePath}, does not exist.`,
+      ),
+    );
 };

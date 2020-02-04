@@ -2,19 +2,14 @@ import { setFailed } from '@actions/core';
 import { env as environment } from 'process';
 import * as semanticRelease from 'semantic-release';
 
+import { Commands, reportResults, runTask } from './tasks';
 import {
   generatePlugins,
-  parserOptions,
-  releaseRules,
-  transform,
-} from './config';
-import {
   handleBranchFlag,
   handleDebugFlag,
   handleDryRunFlag,
   handleScriptPathFlag,
-} from './optionsHandlers';
-import { Commands, reportResults, runTask } from './tasks';
+} from './util';
 
 if (handleDebugFlag() === true) {
   /* eslint-disable @typescript-eslint/no-require-imports */
@@ -30,18 +25,13 @@ const main = async (): Promise<void> => {
   ]);
 
   const result = await semanticRelease({
-    /* eslint-disable unicorn/prevent-abbreviations */
     ci: false,
     ...handleBranchFlag(),
     ...handleDryRunFlag(),
-    parserOpts: parserOptions,
     plugins: generatePlugins({
       publishToNpm: environment.NPM_TOKEN !== undefined,
       scriptPath: await handleScriptPathFlag(),
     }),
-    releaseRules,
-    writerOpts: { transform },
-    /* eslint-enable unicorn/prevent-abbreviations */
   });
 
   await reportResults(result);

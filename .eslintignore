@@ -1,4 +1,4 @@
 /dist
 /lib
 # TODO (oleg-koval) [2019-12-14] Translate transform.ts to TypeScript
-/src/config/transform.ts
+/src/util/transform.ts

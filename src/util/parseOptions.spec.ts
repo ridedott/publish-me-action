@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
 
-import * as handlers from '.';
+import * as handlers from './parseOptions';
 
 /*
  * Setup and teardown

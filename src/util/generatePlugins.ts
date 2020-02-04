@@ -1,6 +1,26 @@
 import { PluginSpec } from 'semantic-release';
 
-import { releaseRules } from './releaseRules';
+import { transform } from './transform';
+
+const releaseRules = [
+  { release: 'patch', type: 'build' },
+  { release: 'patch', type: 'ci' },
+  { release: 'patch', type: 'chore' },
+  { release: 'patch', type: 'docs' },
+  { release: 'patch', type: 'refactor' },
+  { release: 'patch', type: 'style' },
+  { release: 'patch', type: 'test' },
+];
+
+
+const parserOptions = {
+  mergeCorrespondence: ['id', 'source'],
+  /* eslint-disable prefer-named-capture-group */
+  /* eslint-disable require-unicode-regexp */
+  mergePattern: /^Merge pull request #(\d+) from (.*)$/,
+  /* eslint-enable prefer-named-capture-group */
+  /* eslint-enable require-unicode-regexp */
+};
 
 const generateExecPlugin = (
   command: string,
@@ -16,10 +36,20 @@ export const generatePlugins = (options: {
     [
       '@semantic-release/commit-analyzer',
       {
+        parserOptions,
         releaseRules,
       },
     ],
-    '@semantic-release/release-notes-generator',
+    [
+      '@semantic-release/release-notes-generator',
+      {
+        /* eslint-disable unicorn/prevent-abbreviations */
+        writerOpts: {
+          transform
+        }
+        /* eslint-enable unicorn/prevent-abbreviations */
+      }
+    ],
     '@semantic-release/changelog',
     generateExecPlugin('npx prettier --write CHANGELOG.md'),
     ...(options.scriptPath === undefined
