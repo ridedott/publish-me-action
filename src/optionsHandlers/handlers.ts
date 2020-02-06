@@ -17,6 +17,9 @@ export enum Flags {
 export const handleBranchFlag = (): { branch: string } | {} => {
   const branch: string = getInput(Flags.branch);
 
+  // eslint-disable-next-line no-console
+  console.log(branch);
+
   if (branch.length > 0) {
     return {
       branch,
