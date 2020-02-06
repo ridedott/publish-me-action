@@ -1,3 +1,10 @@
+## [1.2.13](https://github.com/ridedott/publish-me-action/compare/v1.2.12...v1.2.13) (2020-02-06)
+
+### Chores
+
+- **deps-dev:** bump @types/jest from 25.1.1 to 25.1.2
+  ([05d571e](https://github.com/ridedott/publish-me-action/commit/05d571e24ddf2e4e5f542dd4e8a9dd76dbe14c46))
+
 ## [1.2.12](https://github.com/ridedott/publish-me-action/compare/v1.2.11...v1.2.12) (2020-02-05)
 
 ### Chores
