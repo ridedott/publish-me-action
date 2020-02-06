@@ -29,6 +29,9 @@ const main = async (): Promise<void> => {
     runTask(Commands.RemoveNpmrc),
   ]);
 
+  // eslint-disable-next-line no-console
+  console.log('The correct branch.');
+
   const result = await semanticRelease({
     /* eslint-disable unicorn/prevent-abbreviations */
     ci: false,
