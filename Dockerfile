@@ -10,5 +10,5 @@ RUN npm ci --ignore-scripts --no-audit && \
   npm run build && \
   npm ci --ignore-scripts --no-audit --only=production
 
-CMD [ "ls", "-al"]
+CMD [ "ls", "-al", "/github/home"]
 
