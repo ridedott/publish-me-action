@@ -1,5 +1,7 @@
 FROM node:12-alpine
 
+COPY scripts/entrypoint.sh ./entrypoint.sh
+
 WORKDIR /action
 
 COPY package*.json ./
@@ -10,5 +12,5 @@ RUN npm ci --ignore-scripts --no-audit && \
   npm run build && \
   npm ci --ignore-scripts --no-audit --only=production
 
-CMD [ "ls", "-al", "/action"]
+ENTRYPOINT [ "/entrypoint.sh"]
 
