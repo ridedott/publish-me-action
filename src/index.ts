@@ -1,54 +1,54 @@
-// import { setFailed } from '@actions/core';
-// import { env as environment } from 'process';
-// import * as semanticRelease from 'semantic-release';
+// Import { setFailed } from '@actions/core';
+// Import { env as environment } from 'process';
+// Import * as semanticRelease from 'semantic-release';
 //
-// import {
-//   generatePlugins,
-//   parserOptions,
-//   releaseRules,
-//   transform,
+// Import {
+//   GeneratePlugins,
+//   ParserOptions,
+//   ReleaseRules,
+//   Transform,
 // } from './config';
-// import {
-//   handleBranchFlag,
-//   handleDebugFlag,
-//   handleDryRunFlag,
-//   handleScriptPathFlag,
+// Import {
+//   HandleBranchFlag,
+//   HandleDebugFlag,
+//   HandleDryRunFlag,
+//   HandleScriptPathFlag,
 // } from './optionsHandlers';
-// import { Commands, reportResults, runTask } from './tasks';
+// Import { Commands, reportResults, runTask } from './tasks';
 //
-// if (handleDebugFlag() === true) {
+// If (handleDebugFlag() === true) {
 //   /* eslint-disable @typescript-eslint/no-require-imports */
 //   /* eslint-disable-next-line global-require */
-//   require('debug').enable('semantic-release:*');
+//   Require('debug').enable('semantic-release:*');
 //   /* eslint-enable @typescript-eslint/no-require-imports */
 // }
 //
-// const main = async (): Promise<void> => {
-//   await Promise.all([
-//     runTask(Commands.PreInstallPlugins),
-//     runTask(Commands.RemoveNpmrc),
+// Const main = async (): Promise<void> => {
+//   Await Promise.all([
+//     RunTask(Commands.PreInstallPlugins),
+//     RunTask(Commands.RemoveNpmrc),
 //   ]);
 //
-//   const result = await semanticRelease({
+//   Const result = await semanticRelease({
 //     /* eslint-disable unicorn/prevent-abbreviations */
-//     ci: false,
+//     Ci: false,
 //     ...handleBranchFlag(),
 //     ...handleDryRunFlag(),
-//     parserOpts: parserOptions,
-//     plugins: generatePlugins({
-//       publishToNpm: environment.NPM_TOKEN !== undefined,
-//       scriptPath: await handleScriptPathFlag(),
+//     ParserOpts: parserOptions,
+//     Plugins: generatePlugins({
+//       PublishToNpm: environment.NPM_TOKEN !== undefined,
+//       ScriptPath: await handleScriptPathFlag(),
 //     }),
-//     releaseRules,
-//     writerOpts: { transform },
+//     ReleaseRules,
+//     WriterOpts: { transform },
 //     /* eslint-enable unicorn/prevent-abbreviations */
 //   });
 //
-//   await reportResults(result);
+//   Await reportResults(result);
 // };
 //
-// main().catch((error: Error): void => {
-//   setFailed(`An unexpected error occurred: ${error}, ${error.stack}.`);
+// Main().catch((error: Error): void => {
+//   SetFailed(`An unexpected error occurred: ${error}, ${error.stack}.`);
 // });
 
 import { getInput, setFailed } from '@actions/core';
@@ -85,9 +85,13 @@ const main = async (): Promise<void> => {
   const isDebug: boolean = getInput(ActionParameters.debug) === 'true';
 
   // eslint-disable-next-line no-console
-  console.log(JSON.stringify({
-    branch, isDebug, isDryRun
-  }));
+  console.log(
+    JSON.stringify({
+      branch,
+      isDebug,
+      isDryRun,
+    }),
+  );
 
   await semanticRelease({
     ci: true,
@@ -99,12 +103,11 @@ const main = async (): Promise<void> => {
           parserOpts: commitAnalyzerParserOptions,
           releaseRules: commitAnalyzerReleaseRules,
         },
-      ]
-    ]
+      ],
+    ],
   });
 };
 
-main()
-  .catch((error: Error): void => {
-    setFailed(JSON.stringify(error));
-  });
+main().catch((error: Error): void => {
+  setFailed(JSON.stringify(error));
+});

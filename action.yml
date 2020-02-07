@@ -18,5 +18,9 @@ inputs:
     required: false
 name: Publish me!
 runs:
-  main: dist/index.js
-  using: node12
+  args:
+    - ${{ inputs.branch }}
+    - ${{ inputs.debug }}
+    - ${{ inputs.dry-run }}
+  image: Dockerfile
+  using: docker
