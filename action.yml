@@ -18,5 +18,5 @@ inputs:
     required: false
 name: Publish me!
 runs:
-  image: Dockerfile
-  using: docker
+  main: ./dist/index.js
+  using: node12

@@ -72,8 +72,9 @@
     "url": "git+https://github.com/ridedott/publish-me-action.git"
   },
   "scripts": {
-    "build": "run-s clean build:ts",
+    "build": "run-s clean build:ts build:bundle",
     "build:ts": "tsc --project tsconfig.production.json",
+    "build:bundle": "ncc build ./dist/index.js",
     "build:ts:watch": "tsc --project tsconfig.production.json --watch",
     "clean": "rm -rf ./dist",
     "cz": "git-cz",
