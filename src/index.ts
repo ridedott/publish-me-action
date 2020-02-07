@@ -79,33 +79,42 @@ const commitAnalyzerReleaseRules = [
   { release: 'patch', type: 'test' },
 ];
 
+const branch: string = getInput(ActionParameters.branch);
+const isDryRun: boolean = getInput(ActionParameters.dryRun) === 'true';
+const isDebug: boolean = getInput(ActionParameters.debug) === 'true';
+
+// eslint-disable-next-line no-console
+console.log(
+  JSON.stringify({
+    branch,
+    isDebug,
+    isDryRun,
+  }),
+  process.cwd()
+);
+
+// eslint-disable-next-line no-console,no-process-env
+console.log(process.env);
+
 const main = async (): Promise<void> => {
-  const branch: string = getInput(ActionParameters.branch);
-  const isDryRun: boolean = getInput(ActionParameters.dryRun) === 'true';
-  const isDebug: boolean = getInput(ActionParameters.debug) === 'true';
-
-  // eslint-disable-next-line no-console
-  console.log(
-    JSON.stringify({
-      branch,
-      isDebug,
-      isDryRun,
-    }),
-  );
-
-  await semanticRelease({
-    ci: true,
-    plugins: [
-      [
-        '@semantic-release/commit-analyzer',
-        {
-          // eslint-disable-next-line unicorn/prevent-abbreviations
-          parserOpts: commitAnalyzerParserOptions,
-          releaseRules: commitAnalyzerReleaseRules,
-        },
+  await semanticRelease(
+    {
+      ci: false,
+      plugins: [
+        [
+          '@semantic-release/commit-analyzer',
+          {
+            // eslint-disable-next-line unicorn/prevent-abbreviations
+            parserOpts: commitAnalyzerParserOptions,
+            releaseRules: commitAnalyzerReleaseRules,
+          },
+        ]
       ],
-    ],
-  });
+    },
+    {
+      cwd: '../../misc/semantic-release',
+    }
+  );
 };
 
 main().catch((error: Error): void => {
