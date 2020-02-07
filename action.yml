@@ -18,9 +18,9 @@ inputs:
     required: false
 name: Publish me!
 runs:
-  args:
-    - ${{ inputs.branch }}
-    - ${{ inputs.debug }}
-    - ${{ inputs.dry-run }}
+  env:
+    BRANCH: ${{ inputs.branch }}
+    DEBUG: ${{ inputs.debug }}
+    DRY_RUN: ${{ inputs.dry-run }}
   image: Dockerfile
   using: docker
