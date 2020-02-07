@@ -12,5 +12,5 @@ RUN npm ci --ignore-scripts --no-audit && \
   npm run build && \
   npm ci --ignore-scripts --no-audit --only=production
 
-#ENTRYPOINT [ "/entrypoint.sh"]
-CMD ["pwd"]
+ENTRYPOINT [ "/entrypoint.sh"]
+
