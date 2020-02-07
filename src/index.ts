@@ -54,6 +54,10 @@
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 require('debug').enable('semantic-release:*');
 
+import '@semantic-release/commit-analyzer';
+import '@semantic-release/release-notes-generator';
+import '@semantic-release/changelog';
+
 import { getInput, setFailed } from '@actions/core';
 import { env as environment } from 'process';
 import * as semanticRelease from 'semantic-release';
