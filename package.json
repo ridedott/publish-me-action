@@ -73,7 +73,7 @@
   },
   "scripts": {
     "build": "run-s clean build:ts",
-    "build:ts": "ncc build ./src/index.ts -m -o dist",
+    "build:ts": "./scripts/build.sh",
     "build:ts:watch": "tsc --project tsconfig.production.json --watch",
     "clean": "rm -rf ./dist && rm -rf ./lib",
     "cz": "git-cz",

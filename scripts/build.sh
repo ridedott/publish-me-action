@@ -11,9 +11,9 @@ ncc build src/index.ts \
 --minify \
 --source-map \
 --v8-cache \
+--out dist \
 --external @semantic-release/changelog \
 --external @semantic-release/commit-analyzer \
---external @semantic-release/exec \
 --external @semantic-release/git \
 --external @semantic-release/npm \
 --external @semantic-release/release-notes-generator
