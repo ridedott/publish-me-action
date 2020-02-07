@@ -52,7 +52,9 @@
 // });
 
 import { getInput, setFailed } from '@actions/core';
+import { env as environment } from 'process';
 import * as semanticRelease from 'semantic-release';
+
 import { transform } from './config';
 
 enum ActionParameters {
@@ -119,6 +121,11 @@ const main = async (): Promise<void> => {
         ],
         '@semantic-release/changelog',
       ],
+    },
+    {
+      cwd: typeof environment.GITHUB_WORKSPACE === 'string'
+        ? environment.GITHUB_WORKSPACE
+        : '/github/workspace'
     }
   );
 };
