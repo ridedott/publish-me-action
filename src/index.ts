@@ -1,3 +1,7 @@
+import '@semantic-release/changelog';
+import '@semantic-release/commit-analyzer';
+import '@semantic-release/release-notes-generator';
+
 import { getInput, setFailed } from '@actions/core';
 import { env as environment } from 'process';
 import * as semanticRelease from 'semantic-release';
