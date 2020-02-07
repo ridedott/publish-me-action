@@ -72,13 +72,10 @@
     "url": "git+https://github.com/ridedott/publish-me-action.git"
   },
   "scripts": {
-    "build": "run-s clean:dist build:dist",
-    "build:dist": "./scripts/build.sh",
+    "build": "run-s clean build:ts",
     "build:ts": "tsc --project tsconfig.production.json",
     "build:ts:watch": "tsc --project tsconfig.production.json --watch",
-    "clean": "run-p clean:*",
-    "clean:dist": "rm -rf dist",
-    "clean:lib": "rm -rf lib",
+    "clean": "rm -rf dist",
     "cz": "git-cz",
     "cz:retry": "git-cz --retry",
     "format": "prettier --check \"**/*.{js,json,md,ts,yml,yaml}\"",
