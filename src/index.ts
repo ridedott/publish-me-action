@@ -51,6 +51,9 @@
 //   SetFailed(`An unexpected error occurred: ${error}, ${error.stack}.`);
 // });
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+require('debug').enable('semantic-release:*');
+
 import { getInput, setFailed } from '@actions/core';
 import { env as environment } from 'process';
 import * as semanticRelease from 'semantic-release';
@@ -100,6 +103,12 @@ console.log(
 );
 
 const main = async (): Promise<void> => {
+  const cwd = typeof environment.GITHUB_WORKSPACE === 'string'
+    ? environment.GITHUB_WORKSPACE
+    : '/github/workspace';
+
+  // eslint-disable-next-line no-console
+  console.log(cwd);
   await semanticRelease(
     {
       ci: true,
@@ -123,9 +132,7 @@ const main = async (): Promise<void> => {
       ],
     },
     {
-      cwd: typeof environment.GITHUB_WORKSPACE === 'string'
-        ? environment.GITHUB_WORKSPACE
-        : '/github/workspace'
+      cwd,
     }
   );
 };
