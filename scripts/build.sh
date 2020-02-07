@@ -9,8 +9,6 @@ cd "${ROOT_PATH}"
 
 ncc build ./src/index.ts \
 --minify \
---source-map \
---v8-cache \
 --out dist \
 --external @semantic-release/changelog \
 --external @semantic-release/commit-analyzer \
