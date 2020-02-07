@@ -10,8 +10,8 @@ cd "${ROOT_PATH}"
 ncc build ./src/index.ts \
 --minify \
 --out dist \
-#--external @semantic-release/changelog \
-#--external @semantic-release/commit-analyzer \
+--external @semantic-release/commit-analyzer \
+--external @semantic-release/npm \
 #--external @semantic-release/git \
-#--external @semantic-release/npm \
+#--external @semantic-release/changelog \
 #--external @semantic-release/release-notes-generator
