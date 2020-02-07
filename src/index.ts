@@ -53,6 +53,7 @@
 
 import { getInput, setFailed } from '@actions/core';
 import * as semanticRelease from 'semantic-release';
+import { transform } from './config';
 
 enum ActionParameters {
   branch = 'branch',
@@ -79,6 +80,10 @@ const commitAnalyzerReleaseRules = [
   { release: 'patch', type: 'test' },
 ];
 
+const releaseNotesGeneratorWriterOptions = {
+  transform
+};
+
 const branch: string = getInput(ActionParameters.branch);
 const isDryRun: boolean = getInput(ActionParameters.dryRun) === 'true';
 const isDebug: boolean = getInput(ActionParameters.debug) === 'true';
@@ -90,16 +95,12 @@ console.log(
     isDebug,
     isDryRun,
   }),
-  process.cwd()
 );
-
-// eslint-disable-next-line no-console,no-process-env
-console.log(process.env);
 
 const main = async (): Promise<void> => {
   await semanticRelease(
     {
-      ci: false,
+      ci: true,
       plugins: [
         [
           '@semantic-release/commit-analyzer',
@@ -108,11 +109,16 @@ const main = async (): Promise<void> => {
             parserOpts: commitAnalyzerParserOptions,
             releaseRules: commitAnalyzerReleaseRules,
           },
-        ]
+        ],
+        [
+          '@semantic-release/release-notes-generator',
+          {
+            // eslint-disable-next-line unicorn/prevent-abbreviations
+            writerOpts: releaseNotesGeneratorWriterOptions
+          }
+        ],
+        '@semantic-release/changelog',
       ],
-    },
-    {
-      cwd: '../../misc/semantic-release',
     }
   );
 };
