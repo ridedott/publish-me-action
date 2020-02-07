@@ -1,4 +1,2 @@
-import '@semantic-release/commit-analyzer';
-import '@semantic-release/release-notes-generator';
-import '@semantic-release/changelog';
+export {};
 //# sourceMappingURL=index.d.ts.map

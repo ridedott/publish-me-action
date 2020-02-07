@@ -7,7 +7,7 @@ ROOT_PATH="$(dirname ${SCRIPT_PATH})"
 
 cd "${ROOT_PATH}"
 
-ncc build src/index.ts \
+ncc build ./src/index.ts \
 --minify \
 --source-map \
 --v8-cache \
