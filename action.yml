@@ -6,7 +6,7 @@ description: A GitHub Action for Semantic Release.
 inputs:
   BRANCH:
     default: master
-    description: A git branch to release to.
+    description: A git branch to release from.
     required: false
   DEBUG:
     default: 'false'
