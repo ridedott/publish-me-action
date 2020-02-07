@@ -52,22 +52,56 @@
 // });
 
 import { getInput, setFailed } from '@actions/core';
+import * as semanticRelease from 'semantic-release';
 
-export enum Configuration {
+enum ActionParameters {
   branch = 'branch',
   debug = 'debug',
   dryRun = 'dry-run',
 }
 
+const commitAnalyzerParserOptions = {
+  mergeCorrespondence: ['id', 'source'],
+  /* eslint-disable prefer-named-capture-group */
+  /* eslint-disable require-unicode-regexp */
+  mergePattern: /^Merge pull request #(\d+) from (.*)$/,
+  /* eslint-enable prefer-named-capture-group */
+  /* eslint-enable require-unicode-regexp */
+};
+
+const commitAnalyzerReleaseRules = [
+  { release: 'patch', type: 'build' },
+  { release: 'patch', type: 'ci' },
+  { release: 'patch', type: 'chore' },
+  { release: 'patch', type: 'docs' },
+  { release: 'patch', type: 'refactor' },
+  { release: 'patch', type: 'style' },
+  { release: 'patch', type: 'test' },
+];
+
 const main = async (): Promise<void> => {
-  const branch: string = getInput(Configuration.branch);
-  const isDryRun: boolean = getInput(Configuration.dryRun) === 'true';
-  const isDebug: boolean = getInput(Configuration.debug) === 'true';
+  const branch: string = getInput(ActionParameters.branch);
+  const isDryRun: boolean = getInput(ActionParameters.dryRun) === 'true';
+  const isDebug: boolean = getInput(ActionParameters.debug) === 'true';
 
   // eslint-disable-next-line no-console
   console.log(JSON.stringify({
     branch, isDebug, isDryRun
   }));
+
+  await semanticRelease({
+    ci: true,
+    plugins: [
+      [
+        '@semantic-release/commit-analyzer',
+        {
+          // eslint-disable-next-line unicorn/prevent-abbreviations
+          parserOpts: commitAnalyzerParserOptions,
+          releaseRules: commitAnalyzerReleaseRules,
+        },
+      ]
+    ]
+  });
 };
 
 main()
