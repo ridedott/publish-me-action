@@ -4,23 +4,17 @@ branding:
   icon: package
 description: A GitHub Action for Semantic Release.
 inputs:
-  BRANCH:
+  branch:
     default: master
     description: A git branch to release from.
     required: false
-  DEBUG:
+  debug:
     default: 'false'
     description: Outputs debug information for semantic-release plugins.
     required: false
-  DRY_RUN:
+  dry-run:
     default: 'false'
     description: 'Skips `prepare`, `publish` and `success` steps.'
-    required: false
-  SCRIPT_PATH:
-    default: ''
-    description:
-      Executes a script with @semantic-release/exec plugin. Scripts must have
-      read and execute permissions.
     required: false
 name: Publish me!
 runs:

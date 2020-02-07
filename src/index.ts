@@ -54,9 +54,9 @@
 import { getInput, setFailed } from '@actions/core';
 
 export enum Configuration {
-  branch = 'BRANCH',
-  dryRun = 'DRY_RUN',
-  debug = 'DEBUG',
+  branch = 'branch',
+  debug = 'debug',
+  dryRun = 'dry-run',
 }
 
 const main = async (): Promise<void> => {
