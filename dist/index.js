@@ -3,30 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("@semantic-release/changelog");
 const core_1 = require("@actions/core");
 const process_1 = require("process");
-// import { transform } from './config/transform';
 const setup_1 = require("./setup");
-// const commitAnalyzerParserOptions = {
-//   mergeCorrespondence: ['id', 'source'],
-//   /* eslint-disable prefer-named-capture-group */
-//   /* eslint-disable require-unicode-regexp */
-//   mergePattern: /^Merge pull request #(\d+) from (.*)$/,
-//   /* eslint-enable prefer-named-capture-group */
-//   /* eslint-enable require-unicode-regexp */
-// };
-//
-// const commitAnalyzerReleaseRules = [
-//   { release: 'patch', type: 'build' },
-//   { release: 'patch', type: 'ci' },
-//   { release: 'patch', type: 'chore' },
-//   { release: 'patch', type: 'docs' },
-//   { release: 'patch', type: 'refactor' },
-//   { release: 'patch', type: 'style' },
-//   { release: 'patch', type: 'test' },
-// ];
-//
-// const releaseNotesGeneratorWriterOptions = {
-//   transform
-// };
 const main = async () => {
     const cwd = typeof process_1.env.GITHUB_WORKSPACE === 'string'
         ? process_1.env.GITHUB_WORKSPACE
@@ -34,32 +11,6 @@ const main = async () => {
     const semanticRelease = await setup_1.setup();
     // eslint-disable-next-line no-console
     console.log(cwd, semanticRelease);
-    // await semanticRelease(
-    //   {
-    //     ci: true,
-    //     plugins: [
-    //       [
-    //         '@semantic-release/commit-analyzer',
-    //         {
-    //           // eslint-disable-next-line unicorn/prevent-abbreviations
-    //           parserOpts: commitAnalyzerParserOptions,
-    //           releaseRules: commitAnalyzerReleaseRules,
-    //         },
-    //       ],
-    //       [
-    //         '@semantic-release/release-notes-generator',
-    //         {
-    //           // eslint-disable-next-line unicorn/prevent-abbreviations
-    //           writerOpts: releaseNotesGeneratorWriterOptions
-    //         }
-    //       ],
-    //       '@semantic-release/changelog',
-    //     ],
-    //   },
-    //   {
-    //     cwd,
-    //   }
-    // );
 };
 main().catch((error) => {
     core_1.setFailed(JSON.stringify(error));
