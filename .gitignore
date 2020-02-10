@@ -40,6 +40,3 @@ pids
 
 # Coverage output
 coverage
-
-# Build output
-lib
