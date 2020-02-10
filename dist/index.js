@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@actions/core");
 const process_1 = require("process");
 const semanticRelease = require("semantic-release");
+const transform_1 = require("./util/transform");
 const commitAnalyzerParserOptions = {
     mergeCorrespondence: ['id', 'source'],
     /* eslint-disable prefer-named-capture-group */
@@ -18,6 +19,9 @@ const commitAnalyzerReleaseRules = [
     { release: 'patch', type: 'style' },
     { release: 'patch', type: 'test' },
 ];
+const releaseNotesGeneratorWriterOptions = {
+    transform: transform_1.transform
+};
 const main = async () => {
     const cwd = typeof process_1.env.GITHUB_WORKSPACE === 'string'
         ? process_1.env.GITHUB_WORKSPACE
@@ -33,6 +37,14 @@ const main = async () => {
                     releaseRules: commitAnalyzerReleaseRules,
                 },
             ],
+            [
+                '@semantic-release/release-notes-generator',
+                {
+                    // eslint-disable-next-line unicorn/prevent-abbreviations
+                    writerOpts: releaseNotesGeneratorWriterOptions
+                }
+            ],
+            '@semantic-release/changelog',
         ]
     }, {
         cwd

@@ -2,6 +2,8 @@ import { setFailed } from '@actions/core';
 import { env as environment } from 'process';
 import * as semanticRelease from 'semantic-release';
 
+import { transform } from './util/transform';
+
 const commitAnalyzerParserOptions = {
   mergeCorrespondence: ['id', 'source'],
   /* eslint-disable prefer-named-capture-group */
@@ -21,6 +23,10 @@ const commitAnalyzerReleaseRules = [
   { release: 'patch', type: 'test' },
 ];
 
+const releaseNotesGeneratorWriterOptions = {
+  transform
+};
+
 const main = async (): Promise<void> => {
   const cwd =
     typeof environment.GITHUB_WORKSPACE === 'string'
@@ -39,6 +45,14 @@ const main = async (): Promise<void> => {
             releaseRules: commitAnalyzerReleaseRules,
           },
         ],
+        [
+          '@semantic-release/release-notes-generator',
+          {
+            // eslint-disable-next-line unicorn/prevent-abbreviations
+            writerOpts: releaseNotesGeneratorWriterOptions
+          }
+        ],
+        '@semantic-release/changelog',
       ]
     },
     {
