@@ -55,10 +55,6 @@
   "main": "dist/index.js",
   "name": "@ridedott/publish-me-action",
   "private": false,
-  "publishConfig": {
-    "access": "restricted",
-    "registry": "https://npm.pkg.github.com"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ridedott/publish-me-action.git"
