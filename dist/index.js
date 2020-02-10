@@ -67,15 +67,15 @@ const release = async () => {
     });
 };
 const publish = async (registry, token) => {
-    core_1.debug(`Validating input.`);
+    console.log(`Validating input.`);
     if (token === undefined || token.length === 0) {
         return;
     }
-    core_1.debug(`Publishing package to ${registry}.`);
+    console.log(`Publishing package to ${registry}.`);
     auth_1.authenticate(registry, token);
-    core_1.debug(`Successfully added credentials for ${registry}.`);
+    console.log(`Successfully added credentials for ${registry}.`);
     await exec_1.exec('npm', ['publish']);
-    core_1.debug(`Successfully published package to ${registry}.`);
+    console.log(`Successfully published package to ${registry}.`);
 };
 const main = async () => {
     await release();
