@@ -1,4 +1,4 @@
-import { getInput, setFailed } from '@actions/core';
+import { setFailed } from '@actions/core';
 import { exec } from '@actions/exec';
 import { env as environment } from 'process';
 import * as semanticRelease from 'semantic-release';
@@ -98,9 +98,9 @@ const publish = async (registry: Registry, token: string | undefined): Promise<v
 const main = async (): Promise<void> => {
   await release();
 
-  await publish(Registry.NPM, getInput('npm-token'));
+  await publish(Registry.NPM, environment['NPM_REGISTRY_TOKEN']);
 
-  await publish(Registry.GITHUB, getInput('github-token'));
+  await publish(Registry.GITHUB, environment['GITHUB_REGISTRY_TOKEN']);
 };
 
 main().catch((error: Error): void => {

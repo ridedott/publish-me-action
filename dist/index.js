@@ -79,8 +79,8 @@ const publish = async (registry, token) => {
 };
 const main = async () => {
     await release();
-    await publish(auth_1.Registry.NPM, core_1.getInput('npm-token'));
-    await publish(auth_1.Registry.GITHUB, core_1.getInput('github-token'));
+    await publish(auth_1.Registry.NPM, process_1.env['NPM_REGISTRY_TOKEN']);
+    await publish(auth_1.Registry.GITHUB, process_1.env['GITHUB_REGISTRY_TOKEN']);
 };
 main().catch((error) => {
     core_1.setFailed(JSON.stringify(error));
