@@ -1,4 +1,4 @@
-import { getInput, setFailed } from '@actions/core';
+import { debug, getInput, setFailed } from '@actions/core';
 import { exec } from '@actions/exec';
 import { env as environment } from 'process';
 import * as semanticRelease from 'semantic-release';
@@ -78,13 +78,21 @@ const release = async (): Promise<void> => {
 };
 
 const publish = async (registry: Registry, token: string | undefined): Promise<void> => {
+  debug(`Validating input.`);
+
   if (token === undefined || token.length === 0) {
     return;
   }
 
+  debug(`Publishing package to ${registry}.`);
+
   authenticate(registry, token);
 
+  debug(`Successfully added credentials for ${registry}.`);
+
   await exec('npm', ['publish']);
+
+  debug(`Successfully published package to ${registry}.`);
 };
 
 const main = async (): Promise<void> => {
