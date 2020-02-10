@@ -1,7 +1,9 @@
-import { setFailed } from '@actions/core';
+import { getInput, setFailed } from '@actions/core';
+import { exec } from '@actions/exec';
 import { env as environment } from 'process';
 import * as semanticRelease from 'semantic-release';
 
+import { authenticate, Registry } from './util/auth';
 import { transform } from './util/transform';
 
 const commitAnalyzerParserOptions = {
@@ -27,7 +29,7 @@ const releaseNotesGeneratorWriterOptions = {
   transform
 };
 
-const main = async (): Promise<void> => {
+const release = async (): Promise<void> => {
   const cwd =
     typeof environment.GITHUB_WORKSPACE === 'string'
       ? environment.GITHUB_WORKSPACE
@@ -73,6 +75,24 @@ const main = async (): Promise<void> => {
       cwd
     }
   );
+};
+
+const publish = async (registry: Registry, token: string | undefined): Promise<void> => {
+  if (token === undefined || token.length === 0) {
+    return;
+  }
+
+  authenticate(registry, token);
+
+  await exec('npm', ['publish']);
+};
+
+const main = async (): Promise<void> => {
+  await release();
+
+  await publish(Registry.NPM, getInput('npm-token'));
+
+  await publish(Registry.GITHUB, getInput('github-token'));
 };
 
 main().catch((error: Error): void => {

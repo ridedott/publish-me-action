@@ -4,13 +4,11 @@ branding:
   icon: package
 description: A GitHub Action for Semantic Release.
 inputs:
-  branch:
-    default: master
-    description: A git branch to release from.
+  gpr-token:
+    description: GitHub token with access to publish to the GitHub Package Registry.
     required: false
-  debug:
-    default: 'false'
-    description: Outputs debug information for semantic-release plugins.
+  npm-token:
+    description: NPM token with access to publish to the NPM Registry.
     required: false
   dry-run:
     default: 'false'

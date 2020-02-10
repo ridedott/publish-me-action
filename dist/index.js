@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@actions/core");
+const exec_1 = require("@actions/exec");
 const process_1 = require("process");
 const semanticRelease = require("semantic-release");
+const auth_1 = require("./util/auth");
 const transform_1 = require("./util/transform");
 const commitAnalyzerParserOptions = {
     mergeCorrespondence: ['id', 'source'],
@@ -22,7 +24,7 @@ const commitAnalyzerReleaseRules = [
 const releaseNotesGeneratorWriterOptions = {
     transform: transform_1.transform
 };
-const main = async () => {
+const release = async () => {
     const cwd = typeof process_1.env.GITHUB_WORKSPACE === 'string'
         ? process_1.env.GITHUB_WORKSPACE
         : '/github/workspace';
@@ -63,6 +65,18 @@ const main = async () => {
     }, {
         cwd
     });
+};
+const publish = async (registry, token) => {
+    if (token === undefined || token.length === 0) {
+        return;
+    }
+    auth_1.authenticate(registry, token);
+    await exec_1.exec('npm', ['publish']);
+};
+const main = async () => {
+    await release();
+    await publish(auth_1.Registry.NPM, core_1.getInput('npm-token'));
+    await publish(auth_1.Registry.GITHUB, core_1.getInput('github-token'));
 };
 main().catch((error) => {
     core_1.setFailed(JSON.stringify(error));
