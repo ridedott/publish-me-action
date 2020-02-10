@@ -1,2 +1,2 @@
-import '@semantic-release/changelog';
+export {};
 //# sourceMappingURL=index.d.ts.map

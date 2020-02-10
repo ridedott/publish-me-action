@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("@semantic-release/changelog");
 const core_1 = require("@actions/core");
 const process_1 = require("process");
 const setup_1 = require("./setup");
