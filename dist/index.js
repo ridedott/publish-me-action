@@ -66,21 +66,17 @@ const release = async () => {
         cwd
     });
 };
-const publish = async (registry, token) => {
-    console.log(`Validating input.`);
-    if (token === undefined || token.length === 0) {
-        return;
-    }
+const publish = async (registry) => {
     console.log(`Publishing package to ${registry}.`);
-    auth_1.authenticate(registry, token);
+    auth_1.authenticate(registry);
     console.log(`Successfully added credentials for ${registry}.`);
     await exec_1.exec('npm', ['publish']);
     console.log(`Successfully published package to ${registry}.`);
 };
 const main = async () => {
     await release();
-    await publish(auth_1.Registry.NPM, process_1.env['NPM_REGISTRY_TOKEN']);
-    await publish(auth_1.Registry.GITHUB, process_1.env['GITHUB_REGISTRY_TOKEN']);
+    // await publish(Registry.NPM);
+    await publish(auth_1.Registry.GITHUB);
 };
 main().catch((error) => {
     core_1.setFailed(JSON.stringify(error));

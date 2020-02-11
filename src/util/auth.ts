@@ -10,7 +10,7 @@ export enum Registry {
   NPM = 'registry.npmjs.org'
 }
 
-export const authenticate = (registry: Registry, token: string): void => {
+export const authenticate = (registry: Registry): void => {
   const npmrcPath: string = path.resolve(currentWorkingDirectory(), '.npmrc');
 
   debug(`Setting authentication in ${npmrcPath}.`);
@@ -21,9 +21,11 @@ export const authenticate = (registry: Registry, token: string): void => {
     fs.unlinkSync(npmrcPath);
   }
 
-  const npmrcContents = `//${registry}/:_authToken=${token}${os.EOL}registry=${registry}${os.EOL}always-auth=true`;
+  const npmrcContents = `//${registry}/:_authToken=\${GITHUB_REGISTRY_TOKEN}${os.EOL}registry=${registry}${os.EOL}always-auth=true`;
 
   fs.writeFileSync(npmrcPath, npmrcContents);
 
   exportVariable('NPM_CONFIG_USERCONFIG', npmrcPath);
+
+  exportVariable('NODE_AUTH_TOKEN', 'XXXXX-XXXXX-XXXXX-XXXXX');
 };

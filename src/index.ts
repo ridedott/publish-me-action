@@ -77,16 +77,10 @@ const release = async (): Promise<void> => {
   );
 };
 
-const publish = async (registry: Registry, token: string | undefined): Promise<void> => {
-  console.log(`Validating input.`);
-
-  if (token === undefined || token.length === 0) {
-    return;
-  }
-
+const publish = async (registry: Registry): Promise<void> => {
   console.log(`Publishing package to ${registry}.`);
 
-  authenticate(registry, token);
+  authenticate(registry);
 
   console.log(`Successfully added credentials for ${registry}.`);
 
@@ -98,9 +92,9 @@ const publish = async (registry: Registry, token: string | undefined): Promise<v
 const main = async (): Promise<void> => {
   await release();
 
-  await publish(Registry.NPM, environment['NPM_REGISTRY_TOKEN']);
+  // await publish(Registry.NPM);
 
-  await publish(Registry.GITHUB, environment['GITHUB_REGISTRY_TOKEN']);
+  await publish(Registry.GITHUB);
 };
 
 main().catch((error: Error): void => {
