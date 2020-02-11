@@ -7,4 +7,5 @@ export declare enum RegistryTokenEnvironmentVariable {
     NPM = "NPM_REGISTRY_TOKEN"
 }
 export declare const authenticate: (registry: Registry, tokenEnvironmentVariable: RegistryTokenEnvironmentVariable) => void;
-//# sourceMappingURL=auth.d.ts.map
+export declare const publish: (registry: Registry, tokenEnvironmentVariable: RegistryTokenEnvironmentVariable) => Promise<void>;
+//# sourceMappingURL=publish.d.ts.map

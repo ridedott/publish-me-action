@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 /* eslint-disable no-sync */
 const core_1 = require("@actions/core");
+const exec_1 = require("@actions/exec");
 const fs = require("fs");
 const os = require("os");
 const path = require("path");
@@ -29,4 +30,11 @@ exports.authenticate = (registry, tokenEnvironmentVariable) => {
     core_1.exportVariable('NPM_CONFIG_USERCONFIG', npmrcPath);
     core_1.exportVariable('NODE_AUTH_TOKEN', 'XXXXX-XXXXX-XXXXX-XXXXX');
 };
-//# sourceMappingURL=auth.js.map
+exports.publish = async (registry, tokenEnvironmentVariable) => {
+    console.log(`Publishing package to ${registry}.`);
+    exports.authenticate(registry, tokenEnvironmentVariable);
+    console.log(`Successfully added credentials for ${registry}.`);
+    await exec_1.exec('npm', ['publish']);
+    console.log(`Successfully published package to ${registry}.`);
+};
+//# sourceMappingURL=publish.js.map
