@@ -3,7 +3,7 @@ import { exec } from '@actions/exec';
 import { env as environment } from 'process';
 import * as semanticRelease from 'semantic-release';
 
-import { authenticate, Registry } from './util/auth';
+import { authenticate, Registry, RegistryTokenEnvironmentVariable } from './util/auth';
 import { transform } from './util/transform';
 
 const commitAnalyzerParserOptions = {
@@ -77,10 +77,10 @@ const release = async (): Promise<void> => {
   );
 };
 
-const publish = async (registry: Registry): Promise<void> => {
+const publish = async (registry: Registry, tokenEnvironmentVariable: RegistryTokenEnvironmentVariable): Promise<void> => {
   console.log(`Publishing package to ${registry}.`);
 
-  authenticate(registry);
+  authenticate(registry, tokenEnvironmentVariable);
 
   console.log(`Successfully added credentials for ${registry}.`);
 
@@ -92,9 +92,9 @@ const publish = async (registry: Registry): Promise<void> => {
 const main = async (): Promise<void> => {
   await release();
 
-  // await publish(Registry.NPM);
+  await publish(Registry.NPM, RegistryTokenEnvironmentVariable.NPM);
 
-  await publish(Registry.GITHUB);
+  await publish(Registry.GITHUB, RegistryTokenEnvironmentVariable.GITHUB);
 };
 
 main().catch((error: Error): void => {

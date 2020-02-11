@@ -11,14 +11,19 @@ var Registry;
     Registry["GITHUB"] = "npm.pkg.github.com";
     Registry["NPM"] = "registry.npmjs.org";
 })(Registry = exports.Registry || (exports.Registry = {}));
-exports.authenticate = (registry) => {
+var RegistryTokenEnvironmentVariable;
+(function (RegistryTokenEnvironmentVariable) {
+    RegistryTokenEnvironmentVariable["GITHUB"] = "GITHUB_REGISTRY_TOKEN";
+    RegistryTokenEnvironmentVariable["NPM"] = "NPM_REGISTRY_TOKEN";
+})(RegistryTokenEnvironmentVariable = exports.RegistryTokenEnvironmentVariable || (exports.RegistryTokenEnvironmentVariable = {}));
+exports.authenticate = (registry, tokenEnvironmentVariable) => {
     const npmrcPath = path.resolve(process_1.cwd(), '.npmrc');
     console.log(`Setting authentication in ${npmrcPath}.`);
     if (fs.existsSync(npmrcPath)) {
         console.log(`Discovered existing repository registry authentication, removing.`);
         fs.unlinkSync(npmrcPath);
     }
-    const npmrcContents = `//${registry}/:_authToken=\${GITHUB_REGISTRY_TOKEN}${os.EOL}registry=https://${registry}${os.EOL}always-auth=true`;
+    const npmrcContents = `//${registry}/:_authToken=\${${tokenEnvironmentVariable}}${os.EOL}registry=https://${registry}${os.EOL}always-auth=true`;
     console.log(`Writing .npmrc: ${npmrcContents}`);
     fs.writeFileSync(npmrcPath, npmrcContents);
     core_1.exportVariable('NPM_CONFIG_USERCONFIG', npmrcPath);
