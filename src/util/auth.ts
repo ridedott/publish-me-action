@@ -21,7 +21,7 @@ export const authenticate = (registry: Registry): void => {
     fs.unlinkSync(npmrcPath);
   }
 
-  const npmrcContents = `//${registry}/:_authToken=\${GITHUB_REGISTRY_TOKEN}${os.EOL}https://registry=${registry}${os.EOL}always-auth=true`;
+  const npmrcContents = `//${registry}/:_authToken=\${GITHUB_REGISTRY_TOKEN}${os.EOL}registry=https://${registry}${os.EOL}always-auth=true`;
 
   console.log(`Writing .npmrc: ${npmrcContents}`);
 
