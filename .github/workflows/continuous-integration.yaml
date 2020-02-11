@@ -116,7 +116,6 @@ jobs:
       - format
       - lint
       - spellcheck
-      - test
       - types
     steps:
       - name: Auto merge
