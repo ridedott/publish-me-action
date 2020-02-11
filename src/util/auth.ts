@@ -1,5 +1,5 @@
 /* eslint-disable no-sync */
-import { debug, exportVariable } from '@actions/core';
+import { exportVariable } from '@actions/core';
 import * as fs from 'fs';
 import * as os from 'os';
 import * as path from 'path';
@@ -13,15 +13,17 @@ export enum Registry {
 export const authenticate = (registry: Registry): void => {
   const npmrcPath: string = path.resolve(currentWorkingDirectory(), '.npmrc');
 
-  debug(`Setting authentication in ${npmrcPath}.`);
+  console.log(`Setting authentication in ${npmrcPath}.`);
 
   if (fs.existsSync(npmrcPath)) {
-    debug(`Discovered existing repository registry authentication, removing.`);
+    console.log(`Discovered existing repository registry authentication, removing.`);
 
     fs.unlinkSync(npmrcPath);
   }
 
   const npmrcContents = `//${registry}/:_authToken=\${GITHUB_REGISTRY_TOKEN}${os.EOL}registry=${registry}${os.EOL}always-auth=true`;
+
+  console.log(`Writing .npmrc: ${npmrcContents}`);
 
   fs.writeFileSync(npmrcPath, npmrcContents);
 

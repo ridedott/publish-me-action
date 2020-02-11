@@ -13,12 +13,13 @@ var Registry;
 })(Registry = exports.Registry || (exports.Registry = {}));
 exports.authenticate = (registry) => {
     const npmrcPath = path.resolve(process_1.cwd(), '.npmrc');
-    core_1.debug(`Setting authentication in ${npmrcPath}.`);
+    console.log(`Setting authentication in ${npmrcPath}.`);
     if (fs.existsSync(npmrcPath)) {
-        core_1.debug(`Discovered existing repository registry authentication, removing.`);
+        console.log(`Discovered existing repository registry authentication, removing.`);
         fs.unlinkSync(npmrcPath);
     }
     const npmrcContents = `//${registry}/:_authToken=\${GITHUB_REGISTRY_TOKEN}${os.EOL}registry=${registry}${os.EOL}always-auth=true`;
+    console.log(`Writing .npmrc: ${npmrcContents}`);
     fs.writeFileSync(npmrcPath, npmrcContents);
     core_1.exportVariable('NPM_CONFIG_USERCONFIG', npmrcPath);
     core_1.exportVariable('NODE_AUTH_TOKEN', 'XXXXX-XXXXX-XXXXX-XXXXX');
