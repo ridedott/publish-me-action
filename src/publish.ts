@@ -1,3 +1,4 @@
+// cspell:ignore npmjs, userconfig
 /* eslint-disable no-sync */
 import { exportVariable } from '@actions/core';
 import { exec } from '@actions/exec';
@@ -6,31 +7,38 @@ import * as os from 'os';
 import * as path from 'path';
 import { cwd as currentWorkingDirectory } from 'process';
 
-
 export enum Registry {
   GITHUB = 'npm.pkg.github.com',
-  NPM = 'registry.npmjs.org'
+  NPM = 'registry.npmjs.org',
 }
 
 export enum RegistryTokenEnvironmentVariable {
   GITHUB = 'GITHUB_REGISTRY_TOKEN',
-  NPM = 'NPM_REGISTRY_TOKEN'
+  NPM = 'NPM_REGISTRY_TOKEN',
 }
 
-export const authenticate = (registry: Registry, tokenEnvironmentVariable: RegistryTokenEnvironmentVariable): void => {
+const getRegistryAuthTokenEnvironmentVariableName = (
+  registry: Registry,
+): RegistryTokenEnvironmentVariable => {
+  if (registry === Registry.GITHUB) {
+    return RegistryTokenEnvironmentVariable.GITHUB;
+  }
+
+  return RegistryTokenEnvironmentVariable.NPM;
+};
+
+export const authenticate = (registry: Registry): void => {
   const npmrcPath: string = path.resolve(currentWorkingDirectory(), '.npmrc');
 
-  console.log(`Setting authentication in ${npmrcPath}.`);
-
   if (fs.existsSync(npmrcPath)) {
-    console.log(`Discovered existing repository registry authentication, removing.`);
-
     fs.unlinkSync(npmrcPath);
   }
 
-  const npmrcContents = `//${registry}/:_authToken=\${${tokenEnvironmentVariable}}${os.EOL}registry=https://${registry}${os.EOL}always-auth=true`;
+  const tokenEnvironmentVariable = getRegistryAuthTokenEnvironmentVariableName(
+    registry,
+  );
 
-  console.log(`Writing .npmrc: ${npmrcContents}`);
+  const npmrcContents = `//${registry}/:_authToken=\${${tokenEnvironmentVariable}}${os.EOL}registry=https://${registry}${os.EOL}always-auth=true`;
 
   fs.writeFileSync(npmrcPath, npmrcContents);
 
@@ -39,14 +47,8 @@ export const authenticate = (registry: Registry, tokenEnvironmentVariable: Regis
   exportVariable('NODE_AUTH_TOKEN', 'XXXXX-XXXXX-XXXXX-XXXXX');
 };
 
-export const publish = async (registry: Registry, tokenEnvironmentVariable: RegistryTokenEnvironmentVariable): Promise<void> => {
-  console.log(`Publishing package to ${registry}.`);
-
-  authenticate(registry, tokenEnvironmentVariable);
-
-  console.log(`Successfully added credentials for ${registry}.`);
+export const publish = async (registry: Registry): Promise<void> => {
+  authenticate(registry);
 
   await exec('npm', ['publish']);
-
-  console.log(`Successfully published package to ${registry}.`);
 };

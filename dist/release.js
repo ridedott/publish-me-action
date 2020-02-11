@@ -29,7 +29,9 @@ const transform = (commit) => {
     const notes = commit.notes.map((note) => (Object.assign(Object.assign({}, note), { title: `BREAKING CHANGES` })));
     const type = transformCommitType(typeof commit.type === 'string' ? commit.type : 'chore');
     const scope = commit.scope === '*' ? '' : commit.scope;
-    const shortHash = typeof commit.hash === 'string' ? commit.hash.slice(0, SHORT_HASH_LENGTH) : undefined;
+    const shortHash = typeof commit.hash === 'string'
+        ? commit.hash.slice(0, SHORT_HASH_LENGTH)
+        : undefined;
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     return Object.assign(Object.assign({}, commit), { notes,
@@ -53,7 +55,7 @@ const commitAnalyzerReleaseRules = [
     { release: 'patch', type: 'test' },
 ];
 const releaseNotesGeneratorWriterOptions = {
-    transform
+    transform,
 };
 exports.release = async () => {
     const cwd = typeof process_1.env.GITHUB_WORKSPACE === 'string'
@@ -74,15 +76,15 @@ exports.release = async () => {
                 '@semantic-release/release-notes-generator',
                 {
                     // eslint-disable-next-line unicorn/prevent-abbreviations
-                    writerOpts: releaseNotesGeneratorWriterOptions
-                }
+                    writerOpts: releaseNotesGeneratorWriterOptions,
+                },
             ],
             '@semantic-release/changelog',
             [
                 '@semantic-release/npm',
                 {
                     npmPublish: false,
-                }
+                },
             ],
             [
                 '@semantic-release/git',
@@ -92,9 +94,9 @@ exports.release = async () => {
                     message: 'chore(release): ${nextRelease.version} [skip ci]',
                 },
             ],
-        ]
+        ],
     }, {
-        cwd
+        cwd,
     });
 };
 //# sourceMappingURL=release.js.map

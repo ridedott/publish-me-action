@@ -1,4 +1,4 @@
-import conventionalChangelogWriter  from 'conventional-changelog-writer';
+import conventionalChangelogWriter from 'conventional-changelog-writer';
 import { Commit } from 'conventional-commits-parser';
 import { env as environment } from 'process';
 import * as semanticRelease from 'semantic-release';
@@ -28,17 +28,26 @@ const transformCommitType = (inputType: string): string => {
   }
 };
 
-const transform: conventionalChangelogWriter.Options.Transform = (commit: Commit): Commit => {
-  const notes = commit.notes.map((note: Commit.Note): Commit.Note => ({
-    ...note,
-    title: `BREAKING CHANGES`,
-  }));
+const transform: conventionalChangelogWriter.Options.Transform = (
+  commit: Commit,
+): Commit => {
+  const notes = commit.notes.map(
+    (note: Commit.Note): Commit.Note => ({
+      ...note,
+      title: `BREAKING CHANGES`,
+    }),
+  );
 
-  const type = transformCommitType(typeof commit.type === 'string' ? commit.type : 'chore');
+  const type = transformCommitType(
+    typeof commit.type === 'string' ? commit.type : 'chore',
+  );
 
   const scope = commit.scope === '*' ? '' : commit.scope;
 
-  const shortHash = typeof commit.hash === 'string' ? commit.hash.slice(0, SHORT_HASH_LENGTH) : undefined;
+  const shortHash =
+    typeof commit.hash === 'string'
+      ? commit.hash.slice(0, SHORT_HASH_LENGTH)
+      : undefined;
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
@@ -71,7 +80,7 @@ const commitAnalyzerReleaseRules = [
 ];
 
 const releaseNotesGeneratorWriterOptions = {
-  transform
+  transform,
 };
 
 export const release = async (): Promise<void> => {
@@ -96,15 +105,15 @@ export const release = async (): Promise<void> => {
           '@semantic-release/release-notes-generator',
           {
             // eslint-disable-next-line unicorn/prevent-abbreviations
-            writerOpts: releaseNotesGeneratorWriterOptions
-          }
+            writerOpts: releaseNotesGeneratorWriterOptions,
+          },
         ],
         '@semantic-release/changelog',
         [
           '@semantic-release/npm',
           {
             npmPublish: false,
-          }
+          },
         ],
         [
           '@semantic-release/git',
@@ -114,10 +123,10 @@ export const release = async (): Promise<void> => {
             message: 'chore(release): ${nextRelease.version} [skip ci]',
           },
         ],
-      ]
+      ],
     },
     {
-      cwd
-    }
+      cwd,
+    },
   );
 };
