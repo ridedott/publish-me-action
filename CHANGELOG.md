@@ -1,3 +1,10 @@
+## [1.2.16](https://github.com/ridedott/publish-me-action/compare/v1.2.15...v1.2.16) (2020-02-12)
+
+### Chores
+
+- **deps-dev:** bump @zeit/ncc from 0.21.0 to 0.21.1
+  ([4320fe4](https://github.com/ridedott/publish-me-action/commit/4320fe4761e8d1735dca6ba399299f204a335bcb))
+
 ## [1.2.15](https://github.com/ridedott/publish-me-action/compare/v1.2.14...v1.2.15) (2020-02-12)
 
 ### Chores
