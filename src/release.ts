@@ -1,4 +1,3 @@
-import conventionalChangelogWriter from 'conventional-changelog-writer';
 import { Commit } from 'conventional-commits-parser';
 import { env as environment } from 'process';
 import * as semanticRelease from 'semantic-release';
@@ -28,7 +27,7 @@ const transformCommitType = (inputType: string): string => {
   }
 };
 
-const transform: conventionalChangelogWriter.Options.Transform = (
+const transform = (
   commit: Commit,
 ): Commit => {
   const notes = commit.notes.map(
@@ -84,11 +83,6 @@ const releaseNotesGeneratorWriterOptions = {
 };
 
 export const release = async (): Promise<void> => {
-  const cwd =
-    typeof environment.GITHUB_WORKSPACE === 'string'
-      ? environment.GITHUB_WORKSPACE
-      : '/github/workspace';
-
   await semanticRelease(
     {
       ci: true,
@@ -126,7 +120,9 @@ export const release = async (): Promise<void> => {
       ],
     },
     {
-      cwd,
+      cwd: typeof environment.GITHUB_WORKSPACE === 'string'
+        ? environment.GITHUB_WORKSPACE
+        : '/github/workspace',
     },
   );
 };

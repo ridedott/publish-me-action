@@ -58,9 +58,6 @@ const releaseNotesGeneratorWriterOptions = {
     transform,
 };
 exports.release = async () => {
-    const cwd = typeof process_1.env.GITHUB_WORKSPACE === 'string'
-        ? process_1.env.GITHUB_WORKSPACE
-        : '/github/workspace';
     await semanticRelease({
         ci: true,
         plugins: [
@@ -96,7 +93,9 @@ exports.release = async () => {
             ],
         ],
     }, {
-        cwd,
+        cwd: typeof process_1.env.GITHUB_WORKSPACE === 'string'
+            ? process_1.env.GITHUB_WORKSPACE
+            : '/github/workspace',
     });
 };
 //# sourceMappingURL=release.js.map
