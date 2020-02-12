@@ -1,3 +1,10 @@
+## [1.2.18](https://github.com/ridedott/publish-me-action/compare/v1.2.17...v1.2.18) (2020-02-12)
+
+### Chores
+
+- **deps-dev:** bump husky from 4.2.2 to 4.2.3
+  ([a968e2f](https://github.com/ridedott/publish-me-action/commit/a968e2ffa4bbc29e156cadec965eddc3e69b31e0))
+
 ## [1.2.17](https://github.com/ridedott/publish-me-action/compare/v1.2.16...v1.2.17) (2020-02-12)
 
 ### Chores
