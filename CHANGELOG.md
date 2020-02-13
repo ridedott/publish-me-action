@@ -1,3 +1,10 @@
+## [1.2.19](https://github.com/ridedott/publish-me-action/compare/v1.2.18...v1.2.19) (2020-02-13)
+
+### Chores
+
+- **deps:** bump semantic-release from 17.0.2 to 17.0.3
+  ([3cda4c1](https://github.com/ridedott/publish-me-action/commit/3cda4c12c4b871b043e24df2575daf1004aa778b))
+
 ## [1.2.18](https://github.com/ridedott/publish-me-action/compare/v1.2.17...v1.2.18) (2020-02-12)
 
 ### Chores
