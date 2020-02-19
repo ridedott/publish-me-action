@@ -1,3 +1,10 @@
+## [1.2.24](https://github.com/ridedott/publish-me-action/compare/v1.2.23...v1.2.24) (2020-02-19)
+
+### Chores
+
+- **deps-dev:** bump ts-jest from 25.2.0 to 25.2.1
+  ([3b5bc7d](https://github.com/ridedott/publish-me-action/commit/3b5bc7d80b4cab7af79798863945c3835884d7d8))
+
 ## [1.2.23](https://github.com/ridedott/publish-me-action/compare/v1.2.22...v1.2.23) (2020-02-18)
 
 ### Chores
