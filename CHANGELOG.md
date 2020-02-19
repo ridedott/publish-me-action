@@ -1,3 +1,10 @@
+## [1.2.27](https://github.com/ridedott/publish-me-action/compare/v1.2.26...v1.2.27) (2020-02-19)
+
+### Chores
+
+- **deps-dev:** bump @types/node from 13.7.2 to 13.7.4
+  ([0c83d57](https://github.com/ridedott/publish-me-action/commit/0c83d57b5fee54a76e012dbd175e0432a64c1bb3))
+
 ## [1.2.26](https://github.com/ridedott/publish-me-action/compare/v1.2.25...v1.2.26) (2020-02-19)
 
 ### Chores
