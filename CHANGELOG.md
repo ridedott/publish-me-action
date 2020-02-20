@@ -1,3 +1,10 @@
+## [1.2.32](https://github.com/ridedott/publish-me-action/compare/v1.2.31...v1.2.32) (2020-02-20)
+
+### Chores
+
+- **deps-dev:** bump typescript from 3.7.5 to 3.8.2
+  ([2ab958f](https://github.com/ridedott/publish-me-action/commit/2ab958f8312c9f2b99e27a55ed63ec56eff4c26c))
+
 ## [1.2.31](https://github.com/ridedott/publish-me-action/compare/v1.2.30...v1.2.31) (2020-02-20)
 
 ### Chores
