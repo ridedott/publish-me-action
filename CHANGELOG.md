@@ -1,3 +1,10 @@
+## [1.2.31](https://github.com/ridedott/publish-me-action/compare/v1.2.30...v1.2.31) (2020-02-20)
+
+### Chores
+
+- **deps:** bump @actions/github from 2.1.0 to 2.1.1
+  ([67cec0a](https://github.com/ridedott/publish-me-action/commit/67cec0aeeebbb9c47a355237de178f5330edca89))
+
 ## [1.2.30](https://github.com/ridedott/publish-me-action/compare/v1.2.29...v1.2.30) (2020-02-20)
 
 ### Chores
