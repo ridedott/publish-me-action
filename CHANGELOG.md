@@ -1,3 +1,10 @@
+## [1.2.36](https://github.com/ridedott/publish-me-action/compare/v1.2.35...v1.2.36) (2020-02-24)
+
+### Chores
+
+- **deps:** bump @semantic-release/release-notes-generator from 9.0.0 to 9.0.1
+  ([1db2f6a](https://github.com/ridedott/publish-me-action/commit/1db2f6a04a66e244c2e1b6c427f13b37e92eaacb))
+
 ## [1.2.35](https://github.com/ridedott/publish-me-action/compare/v1.2.34...v1.2.35) (2020-02-23)
 
 ### Chores
