@@ -1,3 +1,10 @@
+## [1.2.41](https://github.com/ridedott/publish-me-action/compare/v1.2.40...v1.2.41) (2020-02-28)
+
+### Chores
+
+- **deps-dev:** bump cspell from 4.0.54 to 4.0.55
+  ([fe38a78](https://github.com/ridedott/publish-me-action/commit/fe38a78bcd312ecd3383a0f2821b7589a7f89cff))
+
 ## [1.2.40](https://github.com/ridedott/publish-me-action/compare/v1.2.39...v1.2.40) (2020-02-28)
 
 ### Chores
