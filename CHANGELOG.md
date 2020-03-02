@@ -1,3 +1,10 @@
+## [1.2.44](https://github.com/ridedott/publish-me-action/compare/v1.2.43...v1.2.44) (2020-03-02)
+
+### Chores
+
+- **deps:** bump @actions/core from 1.2.2 to 1.2.3
+  ([828cb5d](https://github.com/ridedott/publish-me-action/commit/828cb5d8259c21f5bb03b89c472d3ee0febedd81))
+
 ## [1.2.43](https://github.com/ridedott/publish-me-action/compare/v1.2.42...v1.2.43) (2020-02-28)
 
 ### Chores
