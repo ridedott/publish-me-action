@@ -1,3 +1,10 @@
+## [1.2.46](https://github.com/ridedott/publish-me-action/compare/v1.2.45...v1.2.46) (2020-03-07)
+
+### Chores
+
+- **deps-dev:** bump @types/jest from 25.1.3 to 25.1.4
+  ([3e7c7ed](https://github.com/ridedott/publish-me-action/commit/3e7c7ed3bcf5084f726a06418d7b4ad1adc31eda))
+
 ## [1.2.45](https://github.com/ridedott/publish-me-action/compare/v1.2.44...v1.2.45) (2020-03-06)
 
 ### Chores
