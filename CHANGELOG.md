@@ -1,3 +1,10 @@
+## [1.2.49](https://github.com/ridedott/publish-me-action/compare/v1.2.48...v1.2.49) (2020-03-18)
+
+### Chores
+
+- **deps-dev:** bump ts-node from 8.6.2 to 8.7.0
+  ([871b3ef](https://github.com/ridedott/publish-me-action/commit/871b3ef007b70820c244e4900ac905aacb35bb14))
+
 ## [1.2.48](https://github.com/ridedott/publish-me-action/compare/v1.2.47...v1.2.48) (2020-03-13)
 
 ### Chores
