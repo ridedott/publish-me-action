@@ -1,3 +1,10 @@
+## [1.2.51](https://github.com/ridedott/publish-me-action/compare/v1.2.50...v1.2.51) (2020-03-19)
+
+### Chores
+
+- **deps:** bump @semantic-release/npm from 7.0.4 to 7.0.5
+  ([fd2a0a2](https://github.com/ridedott/publish-me-action/commit/fd2a0a234e68d293eb1d61267ac4e00e9a79b04c))
+
 ## [1.2.50](https://github.com/ridedott/publish-me-action/compare/v1.2.49...v1.2.50) (2020-03-18)
 
 ### Chores
