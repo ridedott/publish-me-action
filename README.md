@@ -1,10 +1,7 @@
 # publish-me-action
 
-[![license: MIT](https://img.shields.io/github/license/ridedott/publish-me-action)](https://github.com/ridedott/publish-me-action/blob/master/LICENSE)
-[![GitHub Actions Status](https://github.com/ridedott/auto-merge-action/workflows/Continuous%20Integration/badge.svg?branch=master)](https://github.com/ridedott/publish-me-action/actions)
-[![Coveralls](https://coveralls.io/repos/github/ridedott/publish-me-action/badge.svg)](https://coveralls.io/github/ridedott/publish-me-action)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+⚠️ **This repository is no longer maintained. Use
+[Release Me! Action](https://github.com/ridedott/release-me-action) instead.**
 
 Automatically releases new versions with
 [Semantic Release](https://github.com/semantic-release/semantic-release).
