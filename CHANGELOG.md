@@ -1,3 +1,10 @@
+## [1.2.56](https://github.com/ridedott/publish-me-action/compare/v1.2.55...v1.2.56) (2020-03-24)
+
+### Chores
+
+- **deps-dev:** bump lint-staged from 10.0.8 to 10.0.9
+  ([385a401](https://github.com/ridedott/publish-me-action/commit/385a40153e8bf4b5b6f4f89ca410e9b7330f2e0c))
+
 ## [1.2.55](https://github.com/ridedott/publish-me-action/compare/v1.2.54...v1.2.55) (2020-03-23)
 
 ### Chores
